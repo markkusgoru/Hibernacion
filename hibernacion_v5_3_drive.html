@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1a2744">
+<title>Pruebas de Equipos CASSA</title>
+
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIkhpYmVybmFjacOzbiBDQVNTQSIsICJzaG9ydF9uYW1lIjogIkhpYmVybmFjacOzbiIsICJkZXNjcmlwdGlvbiI6ICJDb250cm9sIGRlIHBydWViYXMgZGUgaGliZXJuYWNpw7NuIGRlIGVxdWlwb3Mg4oCUIEdydXBvIENBU1NBIiwgInN0YXJ0X3VybCI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMxYTI3NDQiLCAidGhlbWVfY29sb3IiOiAiIzFhMjc0NCIsICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdC1wcmltYXJ5IiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4T1RJZ01Ua3lJajRLSUNBOGNtVmpkQ0IzYVdSMGFEMGlNVGt5SWlCb1pXbG5hSFE5SWpFNU1pSWdjbmc5SWpNeUlpQm1hV3hzUFNJak1XRXlOelEwSWk4K0NpQWdQSFJsZUhRZ2VEMGlPVFlpSUhrOUlqZ3dJaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWlCbWIyNTBMV1poYldsc2VUMGlRWEpwWVd3c2MyRnVjeTF6WlhKcFppSWdabTl1ZEMxM1pXbG5hSFE5SWpjd01DSWdabTl1ZEMxemFYcGxQU0kxTWlJZ1ptbHNiRDBpSTJZMVlUWXlNeUkrU0VsQ1BDOTBaWGgwUGdvZ0lEeDBaWGgwSUhnOUlqazJJaUI1UFNJeE16QWlJSFJsZUhRdFlXNWphRzl5UFNKdGFXUmtiR1VpSUdadmJuUXRabUZ0YVd4NVBTSkJjbWxoYkN4ellXNXpMWE5sY21sbUlpQm1iMjUwTFhkbGFXZG9kRDBpTnpBd0lpQm1iMjUwTFhOcGVtVTlJakk0SWlCbWFXeHNQU0lqWm1abVptWm1JajVEUVZOVFFUd3ZkR1Y0ZEQ0S0lDQThkR1Y0ZENCNFBTSTVOaUlnZVQwaU1UVTRJaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWlCbWIyNTBMV1poYldsc2VUMGlRWEpwWVd3c2MyRnVjeTF6WlhKcFppSWdabTl1ZEMxemFYcGxQU0l4T0NJZ1ptbHNiRDBpY21kaVlTZ3lOVFVzTWpVMUxESTFOU3d3TGpVcElqN2luWVE4TDNSbGVIUStDand2YzNablBnPT0iLCAic2l6ZXMiOiAiMTkyeDE5MiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQXhPVElnTVRreUlqNEtJQ0E4Y21WamRDQjNhV1IwYUQwaU1Ua3lJaUJvWldsbmFIUTlJakU1TWlJZ2NuZzlJak15SWlCbWFXeHNQU0lqTVdFeU56UTBJaTgrQ2lBZ1BIUmxlSFFnZUQwaU9UWWlJSGs5SWpnd0lpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJaUJtYjI1MExXWmhiV2xzZVQwaVFYSnBZV3dzYzJGdWN5MXpaWEpwWmlJZ1ptOXVkQzEzWldsbmFIUTlJamN3TUNJZ1ptOXVkQzF6YVhwbFBTSTFNaUlnWm1sc2JEMGlJMlkxWVRZeU15SStTRWxDUEM5MFpYaDBQZ29nSUR4MFpYaDBJSGc5SWprMklpQjVQU0l4TXpBaUlIUmxlSFF0WVc1amFHOXlQU0p0YVdSa2JHVWlJR1p2Ym5RdFptRnRhV3g1UFNKQmNtbGhiQ3h6WVc1ekxYTmxjbWxtSWlCbWIyNTBMWGRsYVdkb2REMGlOekF3SWlCbWIyNTBMWE5wZW1VOUlqSTRJaUJtYVd4c1BTSWpabVptWm1abUlqNURRVk5UUVR3dmRHVjRkRDRLSUNBOGRHVjRkQ0I0UFNJNU5pSWdlVDBpTVRVNElpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJaUJtYjI1MExXWmhiV2xzZVQwaVFYSnBZV3dzYzJGdWN5MXpaWEpwWmlJZ1ptOXVkQzF6YVhwbFBTSXhPQ0lnWm1sc2JEMGljbWRpWVNneU5UVXNNalUxTERJMU5Td3dMalVwSWo3aW5ZUThMM1JsZUhRK0Nqd3ZjM1puUGc9PSIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9XX0=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KICA8cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjMyIiBmaWxsPSIjMWEyNzQ0Ii8+CiAgPHRleHQgeD0iOTYiIHk9IjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSI1MiIgZmlsbD0iI2Y1YTYyMyI+SElCPC90ZXh0PgogIDx0ZXh0IHg9Ijk2IiB5PSIxMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjI4IiBmaWxsPSIjZmZmZmZmIj5DQVNTQTwvdGV4dD4KICA8dGV4dCB4PSI5NiIgeT0iMTU4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjUpIj7inYQ8L3RleHQ+Cjwvc3ZnPg==">
+<meta name="application-name" content="Pruebas de Equipos CASSA">
+<script>
+(function(){
+  // Register Service Worker via Blob (works for local file + served)
+  if('serviceWorker' in navigator){
+    const swCode=atob('Y29uc3QgQ0FDSEU9J2hpYi1jYXNzYS12NSc7CmNvbnN0IFNLSVBfVVJMUz1bJ2FjY291bnRzLmdvb2dsZS5jb20nLCdvYXV0aDIuZ29vZ2xlYXBpcy5jb20nLCd3d3cuZ29vZ2xlYXBpcy5jb20nXTsKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgZT0+ewogIGUud2FpdFVudGlsKAogICAgY2FjaGVzLm9wZW4oQ0FDSEUpLnRoZW4oYz0+Yy5hZGRBbGwoWycuJ10pKQogICAgICAuY2F0Y2goKCk9Pnt9KQogICk7CiAgc2VsZi5za2lwV2FpdGluZygpOwp9KTsKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdhY3RpdmF0ZScsIGU9PnsKICBlLndhaXRVbnRpbChjYWNoZXMua2V5cygpLnRoZW4oa2V5cz0+CiAgICBQcm9taXNlLmFsbChrZXlzLmZpbHRlcihrPT5rIT09Q0FDSEUpLm1hcChrPT5jYWNoZXMuZGVsZXRlKGspKSkKICApKTsKICBzZWxmLmNsaWVudHMuY2xhaW0oKTsKfSk7CnNlbGYuYWRkRXZlbnRMaXN0ZW5lcignZmV0Y2gnLCBlPT57CiAgY29uc3QgdXJsID0gZS5yZXF1ZXN0LnVybDsKICAvLyBOZXZlciBpbnRlcmNlcHQgR29vZ2xlIEFQSSAvIE9BdXRoIGNhbGxzCiAgaWYoU0tJUF9VUkxTLnNvbWUocz0+dXJsLmluY2x1ZGVzKHMpKSl7CiAgICBlLnJlc3BvbmRXaXRoKGZldGNoKGUucmVxdWVzdCkpOwogICAgcmV0dXJuOwogIH0KICBlLnJlc3BvbmRXaXRoKAogICAgY2FjaGVzLm1hdGNoKGUucmVxdWVzdCkudGhlbihjYWNoZWQ9PnsKICAgICAgaWYoY2FjaGVkKSByZXR1cm4gY2FjaGVkOwogICAgICByZXR1cm4gZmV0Y2goZS5yZXF1ZXN0KS50aGVuKHJlc3A9PnsKICAgICAgICBpZihyZXNwICYmIHJlc3Auc3RhdHVzPT09MjAwICYmIGUucmVxdWVzdC5tZXRob2Q9PT0nR0VUJyl7CiAgICAgICAgICBjb25zdCBjbG9uZT1yZXNwLmNsb25lKCk7CiAgICAgICAgICBjYWNoZXMub3BlbihDQUNIRSkudGhlbihjPT5jLnB1dChlLnJlcXVlc3QsY2xvbmUpKTsKICAgICAgICB9CiAgICAgICAgcmV0dXJuIHJlc3A7CiAgICAgIH0pLmNhdGNoKCgpPT5jYWNoZWR8fG5ldyBSZXNwb25zZSgnT2ZmbGluZScse3N0YXR1czo1MDN9KSk7CiAgICB9KQogICk7Cn0pOwo=');
+    const blob=new Blob([swCode],{type:'text/javascript'});
+    const swUrl=URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl,{scope:'./'
+    }).then(r=>{
+      console.log('SW registered');
+    }).catch(e=>console.warn('SW registration failed (normal for file://):', e.message));
+  }
+  // Intercept beforeinstallprompt to show custom install button
+  let deferredPrompt=null;
+  window.addEventListener('beforeinstallprompt',e=>{
+    e.preventDefault();
+    deferredPrompt=e;
+    // Show install banner
+    const banner=document.getElementById('install-banner');
+    if(banner) banner.style.display='flex';
+  });
+  window.addEventListener('appinstalled',()=>{
+    const banner=document.getElementById('install-banner');
+    if(banner) banner.style.display='none';
+    deferredPrompt=null;
+  });
+  window.installApp=function(){
+    if(deferredPrompt){
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(()=>{deferredPrompt=null;});
+    } else {
+      // iOS / fallback
+      alert('En Safari: toca el ícono Compartir ↑ y luego "Agregar a inicio".\nEn Chrome Android: menú ⋮ → "Agregar a pantalla de inicio".');
+    }
+  };
+})();
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<!-- XLSX loaded inline below -->
+<style>
+:root{
+  --navy:#1a2744;--navy2:#243259;--blue:#2E75B6;--accent:#f5a623;
+  --ok:#27ae60;--warn:#e67e22;--danger:#c0392b;
+  --bg:#f0f4fa;--card:#fff;--border:#dde3ef;
+  --text:#1a2744;--text2:#5a6a8a;--text3:#9aaac8;
+  --r:14px;--safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
+#app{display:flex;flex-direction:column;height:100%;max-width:600px;margin:0 auto;}
+
+/* TOPBAR */
+.tb{background:var(--navy);padding:calc(10px + var(--safe-top)) 14px 10px;display:flex;align-items:center;gap:10px;flex-shrink:0;min-height:56px;}
+.tb-back{background:rgba(255,255,255,.13);border:none;color:#fff;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;flex-shrink:0;}
+.tb-info{flex:1;min-width:0;}
+.tb-title{font-size:16px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tb-sub{font-size:11px;color:rgba(255,255,255,.5);margin-top:1px;}
+.tb-btn{background:rgba(255,255,255,.15);border:none;color:#fff;padding:7px 13px;border-radius:18px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.tb-btn.accent{background:var(--accent);}
+
+/* TABBAR */
+.tabbar{background:var(--navy);display:flex;border-top:1px solid rgba(255,255,255,.07);padding-bottom:var(--safe-bot);flex-shrink:0;}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;padding:9px 2px 7px;cursor:pointer;gap:3px;border:none;background:none;}
+.tab svg{width:21px;height:21px;stroke:rgba(255,255,255,.35);stroke-width:1.8;fill:none;transition:stroke .2s;}
+.tab span{font-size:10px;color:rgba(255,255,255,.35);font-weight:500;transition:color .2s;}
+.tab .tind{width:20px;height:2px;background:var(--accent);border-radius:2px;opacity:0;transition:opacity .2s;}
+.tab.active svg{stroke:#fff;}.tab.active span{color:#fff;}.tab.active .tind{opacity:1;}
+
+/* SCREEN */
+.screen{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+.si{padding:14px 14px 28px;}
+
+/* CARDS */
+.card{background:var(--card);border-radius:var(--r);border:1px solid var(--border);padding:14px;}
+.card+.card{margin-top:10px;}
+
+/* HOME */
+.hero{background:var(--navy);border-radius:var(--r);padding:18px;margin-bottom:14px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(245,166,35,.1);}
+.hero-lbl{font-size:11px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;letter-spacing:.8px;}
+.hero-title{font-size:22px;font-weight:700;color:#fff;margin:3px 0 2px;}
+.hero-sub{font-size:12px;color:rgba(255,255,255,.5);}
+.hero-bar{height:5px;background:rgba(255,255,255,.15);border-radius:3px;margin-top:14px;overflow:hidden;}
+.hero-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .5s;}
+.hero-pct{font-size:11px;color:rgba(255,255,255,.4);margin-top:5px;}
+.stats3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-bottom:14px;}
+.sc{background:var(--card);border-radius:11px;padding:12px 8px;text-align:center;border:1px solid var(--border);}
+.sc-val{font-size:22px;font-weight:700;font-family:'DM Mono',monospace;}
+.sc-lbl{font-size:10px;color:var(--text2);margin-top:2px;font-weight:500;}
+.sec-lbl{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;margin:14px 0 8px 2px;}
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.tc{background:var(--card);border-radius:var(--r);padding:14px;cursor:pointer;border:1px solid var(--border);}
+.tc:active{background:#f5f8ff;}
+.tc-ico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:9px;}
+.tc-ico svg{width:20px;height:20px;fill:none;stroke-width:1.8;}
+.tc h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:1px;}
+.tc p{font-size:11px;color:var(--text2);}
+.pb{height:4px;background:var(--border);border-radius:2px;margin-top:8px;overflow:hidden;}
+.pbf{height:100%;border-radius:2px;transition:width .4s;}
+
+/* LIST */
+.srch{position:relative;margin-bottom:12px;}
+.srch input{width:100%;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px 10px 36px;font-size:14px;color:var(--text);outline:none;font-family:'DM Sans',sans-serif;}
+.srch svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--text3);fill:none;stroke-width:2;}
+.grp-hd{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;padding:10px 2px 5px;display:flex;align-items:center;justify-content:space-between;}
+.er{background:var(--card);border-radius:10px;margin-bottom:5px;display:flex;align-items:center;padding:11px 12px;cursor:pointer;border:1px solid var(--border);}
+.er:active{background:#f5f8ff;}
+.er-dot{width:8px;height:8px;border-radius:50%;margin-right:10px;flex-shrink:0;}
+.er-dot.done{background:var(--ok);}
+.er-dot.partial{background:var(--warn);}
+.er-dot.pending{background:var(--border);border:1.5px solid var(--text3);}
+.er-dot.alert{background:var(--danger);}
+.er-info{flex:1;min-width:0;}
+.er-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.er-sub{font-size:11px;color:var(--text2);margin-top:1px;}
+.er-chev{width:13px;height:13px;stroke:var(--text3);fill:none;stroke-width:2;margin-left:4px;flex-shrink:0;}
+
+/* FORM */
+.fhdr{background:var(--navy);border-radius:var(--r);padding:14px;margin-bottom:12px;}
+.fhdr-code{font-size:10px;color:rgba(255,255,255,.45);font-weight:600;text-transform:uppercase;letter-spacing:.8px;}
+.fhdr-name{font-size:16px;font-weight:600;color:#fff;margin:2px 0 3px;}
+.fhdr-sys{font-size:12px;color:rgba(255,255,255,.5);}
+.wchips{display:flex;gap:7px;margin-bottom:12px;overflow-x:auto;padding-bottom:2px;}
+.wchip{flex-shrink:0;background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:7px 12px;text-align:center;cursor:pointer;min-width:62px;}
+.wchip.active{background:var(--navy);border-color:var(--navy);}
+.wchip b{font-size:12px;font-weight:600;color:var(--text2);display:block;}
+.wchip small{font-size:10px;color:var(--text3);display:block;margin-top:1px;}
+.wchip.active b,.wchip.active small{color:#fff;}
+.flbl{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;padding:12px 0 7px;display:flex;align-items:center;gap:5px;}
+.pc{background:var(--card);border-radius:11px;padding:13px;margin-bottom:7px;border:1px solid var(--border);}
+.pc.pal{border-color:var(--danger);background:#fff8f8;}
+.pc.pwarn{border-color:var(--warn);background:#fffbf4;}
+.ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;}
+.pname{font-size:13px;font-weight:600;}
+.pref{font-size:11px;color:var(--text2);background:var(--bg);padding:2px 8px;border-radius:20px;}
+.prow{display:flex;align-items:center;gap:9px;}
+.pinp{flex:1;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:10px;font-size:16px;font-family:'DM Mono',monospace;font-weight:500;color:var(--text);outline:none;text-align:center;transition:border-color .15s;}
+.pinp:focus{border-color:var(--blue);}
+.pinp.pok{border-color:var(--ok);background:#f0fff5;}
+.pinp.pal2{border-color:var(--danger);background:#fff0f0;}
+.pinp.pwarn2{border-color:var(--warn);background:#fffbf0;}
+.punit{font-size:12px;color:var(--text2);min-width:30px;font-weight:500;}
+.pico{font-size:17px;min-width:22px;text-align:center;}
+.ac-row{display:flex;gap:7px;}
+.ac-btn{flex:1;padding:10px 4px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;border:1.5px solid var(--border);background:var(--card);color:var(--text2);transition:all .15s;}
+.ac-btn.sel-ok{background:#059669;border-color:#059669;color:#fff;}
+.ac-btn.sel-bad{background:#dc2626;border-color:#dc2626;color:#fff;}
+.ac-btn.sel-na{background:#6b7280;border-color:#6b7280;color:#fff;}
+.ti-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;}
+.ti{background:var(--card);border:1.5px solid var(--border);border-radius:8px;padding:9px 10px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;width:100%;}
+.ti:focus{border-color:var(--blue);}
+.txta{width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:9px;padding:10px 11px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;resize:none;min-height:60px;}
+.txta:focus{border-color:var(--blue);}
+.savebtn{width:100%;background:var(--navy);color:#fff;border:none;border-radius:11px;padding:14px;font-size:15px;font-weight:600;cursor:pointer;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.savebtn:active{background:var(--navy2);}
+.savebtn svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2;}
+
+/* EDITOR */
+.edit-section{background:var(--card);border-radius:var(--r);border:1px solid var(--border);margin-bottom:10px;overflow:hidden;}
+.edit-sec-hd{display:flex;align-items:center;padding:12px 14px;gap:10px;cursor:pointer;}
+.edit-sec-hd:active{background:#f5f8ff;}
+.edit-sec-name{flex:1;font-size:14px;font-weight:600;color:var(--text);}
+.edit-sec-cnt{font-size:11px;color:var(--text3);}
+.edit-sec-chev{width:14px;height:14px;stroke:var(--text3);fill:none;stroke-width:2;transition:transform .2s;}
+.edit-sec-chev.open{transform:rotate(90deg);}
+.edit-sec-body{border-top:1px solid var(--border);padding:10px 14px 12px;}
+.edit-eq-row{display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);}
+.edit-eq-row:last-child{border-bottom:none;}
+.edit-eq-name{flex:1;font-size:13px;color:var(--text);}
+.edit-eq-code{font-size:11px;color:var(--text3);margin-right:10px;}
+.icon-btn{background:none;border:none;cursor:pointer;padding:6px;border-radius:6px;display:flex;align-items:center;}
+.icon-btn:active{background:var(--bg);}
+.icon-btn svg{width:16px;height:16px;fill:none;stroke-width:2;}
+.icon-btn.del svg{stroke:#c0392b;}
+.icon-btn.edit2 svg{stroke:var(--blue);}
+.add-row{display:flex;gap:8px;margin-top:10px;}
+.add-inp{flex:1;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:9px 10px;font-size:13px;color:var(--text);outline:none;font-family:'DM Sans',sans-serif;}
+.add-inp:focus{border-color:var(--blue);}
+.add-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:9px 14px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;}
+.param-edit-row{display:flex;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid var(--border);}
+.param-edit-row:last-child{border-bottom:none;}
+.param-mini-inp{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:5px 7px;font-size:12px;color:var(--text);outline:none;font-family:'DM Sans',sans-serif;}
+.param-mini-inp:focus{border-color:var(--blue);}
+.param-mini-inp.w40{width:40px;text-align:center;}
+.param-mini-inp.w60{width:60px;text-align:center;}
+.param-mini-inp.wflex{flex:1;}
+.param-type-sel{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:5px 4px;font-size:12px;color:var(--text);outline:none;}
+
+/* REPORTS */
+.week-sel{display:flex;align-items:center;justify-content:space-between;background:var(--card);border-radius:11px;padding:11px 14px;margin-bottom:12px;border:1px solid var(--border);}
+.wnav{background:var(--bg);border:none;width:30px;height:30px;border-radius:7px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.wnav svg{width:15px;height:15px;stroke:var(--text);fill:none;stroke-width:2;}
+.wlbl{font-size:16px;font-weight:600;text-align:center;}
+.wdate{font-size:11px;color:var(--text2);text-align:center;margin-top:1px;}
+.rep-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px;}
+.rsc{background:var(--card);border-radius:11px;padding:13px;border:1px solid var(--border);}
+.rsc-lbl{font-size:11px;color:var(--text2);font-weight:500;margin-bottom:3px;}
+.rsc-val{font-size:21px;font-weight:700;font-family:'DM Mono',monospace;}
+.chart-card{background:var(--card);border-radius:var(--r);padding:14px;margin-bottom:11px;border:1px solid var(--border);}
+.chart-title{font-size:13px;font-weight:600;margin-bottom:2px;}
+.chart-sub{font-size:11px;color:var(--text2);margin-bottom:11px;}
+.chw{position:relative;height:170px;}
+.exp-row{display:flex;gap:8px;margin-bottom:14px;}
+.ebtn{flex:1;border:none;border-radius:10px;padding:11px;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;}
+.ebtn svg{width:15px;height:15px;fill:none;stroke-width:2;}
+.ebtn.excel{background:#1a7044;color:#fff;}.ebtn.excel svg{stroke:#fff;}
+.ebtn.drive{background:var(--navy);color:#fff;}.ebtn.drive svg{stroke:#fff;}
+.al-item{background:#fff5f5;border:1px solid #fecaca;border-radius:9px;padding:10px 12px;margin-bottom:5px;display:flex;gap:9px;}
+.al-item.al-warn{background:#fffbf0;border-color:#fde68a;}
+.al-dot{width:7px;height:7px;border-radius:50%;background:var(--danger);margin-top:5px;flex-shrink:0;}
+.al-dot.w{background:var(--warn);}
+.al-eq{font-size:13px;font-weight:600;}
+.al-par{font-size:12px;color:var(--text2);margin-top:1px;}
+.al-vals{font-size:11px;margin-top:3px;}
+
+/* STATUS BADGES */
+.eq-badges{display:flex;gap:4px;margin-top:3px;flex-wrap:wrap;}
+.badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px;}
+.badge.hib{background:#dbeafe;color:#1d4ed8;}
+.badge.mant{background:#fef3c7;color:#92400e;}
+.badge.ok2{background:#d1fae5;color:#065f46;}
+.badge.rev{background:#fee2e2;color:#991b1b;}
+/* STATUS TOGGLES */
+.status-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
+.stog{background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:11px 12px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;}
+.stog.act-hib{border-color:#2563eb;background:#eff6ff;}
+.stog.act-mant{border-color:#d97706;background:#fffbeb;}
+.stog.act-ok{border-color:#059669;background:#ecfdf5;}
+.stog.act-rev{border-color:#dc2626;background:#fef2f2;}
+.stog-ico{font-size:20px;flex-shrink:0;}
+.stog-info{flex:1;min-width:0;}
+.stog-name{font-size:12px;font-weight:600;color:var(--text);}
+.stog-hint{font-size:10px;color:var(--text2);margin-top:1px;}
+.stog-ck{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--border);background:var(--bg);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent;}
+.stog.act-hib .stog-ck,.stog.act-mant .stog-ck,.stog.act-ok .stog-ck,.stog.act-rev .stog-ck{background:var(--navy);border-color:var(--navy);color:#fff;}
+/* IMPORT DROP ZONE */
+.drop-zone{border:2px dashed var(--border);border-radius:var(--r);padding:26px 16px;text-align:center;cursor:pointer;transition:border-color .2s;margin-bottom:12px;}
+.drop-zone:hover,.drop-zone.drag{border-color:var(--blue);background:#f0f6ff;}
+.drop-zone svg{width:34px;height:34px;stroke:var(--text3);fill:none;stroke-width:1.5;margin-bottom:8px;}
+.drop-zone h3{font-size:14px;font-weight:600;color:var(--text2);margin-bottom:3px;}
+.drop-zone p{font-size:12px;color:var(--text3);}
+.import-rows{background:var(--bg);border-radius:10px;padding:8px;margin-top:10px;max-height:180px;overflow-y:auto;}
+.ir{display:grid;grid-template-columns:80px 1fr 70px;gap:6px;padding:5px 4px;border-bottom:1px solid var(--border);font-size:12px;align-items:center;}
+.ir:last-child{border-bottom:none;}
+.ir-code{color:var(--text2);font-family:'DM Mono',monospace;}
+.ir-name{color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ir-type{color:var(--blue);font-weight:600;text-align:right;font-size:11px;}
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(26,39,68,.7);z-index:200;display:flex;align-items:flex-end;justify-content:center;}
+.modal{background:var(--card);border-radius:18px 18px 0 0;width:100%;max-width:600px;padding:20px 18px;padding-bottom:calc(20px + var(--safe-bot));max-height:92vh;overflow-y:auto;}
+.modal-title{font-size:17px;font-weight:700;margin-bottom:3px;}
+.modal-sub{font-size:12px;color:var(--text2);margin-bottom:16px;}
+.modal-inp{width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:9px;padding:10px 12px;font-size:14px;color:var(--text);outline:none;font-family:'DM Sans',sans-serif;margin-bottom:10px;}
+.modal-inp:focus{border-color:var(--blue);}
+.modal-row{display:flex;gap:8px;}
+.modal-cancel{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;color:var(--text2);}
+.modal-ok{flex:2;background:var(--navy);border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;color:#fff;}
+/* EXPORT COLUMN OPTIONS */
+.col-opt{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--bg);border-radius:8px;margin-bottom:5px;cursor:pointer;}
+.col-opt input[type=checkbox]{width:16px;height:16px;accent-color:var(--navy);cursor:pointer;flex-shrink:0;}
+.col-opt label{font-size:13px;color:var(--text);cursor:pointer;flex:1;}
+.col-badge{font-size:10px;color:var(--text3);background:var(--card);padding:1px 7px;border-radius:20px;border:1px solid var(--border);}
+/* PREVIEW TABLE */
+.ptbl-wrap{overflow-x:auto;margin-top:12px;border-radius:8px;border:1px solid var(--border);}
+.ptbl{border-collapse:collapse;width:100%;font-size:11px;}
+.ptbl th{background:var(--navy);color:#fff;padding:7px 10px;text-align:left;white-space:nowrap;font-weight:600;}
+.ptbl td{padding:6px 10px;border-bottom:1px solid var(--border);white-space:nowrap;color:var(--text);}
+.ptbl tr:last-child td{border-bottom:none;}
+.ptbl tr:nth-child(even) td{background:#f8faff;}
+
+/* DRIVE STATUS */
+.drive-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;margin-bottom:10px;}
+.drive-badge.connected{background:#d1fae5;color:#065f46;}
+.drive-badge.disconnected{background:#fee2e2;color:#991b1b;}
+.drive-badge.syncing{background:#dbeafe;color:#1d4ed8;}
+.drive-sync-bar{background:var(--card);border-radius:11px;padding:12px 14px;margin-bottom:12px;border:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.drive-sync-info{flex:1;min-width:0;}
+.drive-sync-title{font-size:13px;font-weight:600;color:var(--text);}
+.drive-sync-sub{font-size:11px;color:var(--text2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+/* TOAST / LOADING */
+.toast{position:fixed;bottom:calc(60px + var(--safe-bot) + 10px);left:50%;transform:translateX(-50%) translateY(16px);background:var(--navy);color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:500;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:500;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.toast.ok{background:var(--ok);}.toast.err{background:var(--danger);}
+.loading{position:fixed;inset:0;background:rgba(26,39,68,.8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:1000;opacity:0;pointer-events:none;transition:opacity .2s;}
+.loading.show{opacity:1;pointer-events:all;}
+.spinner{width:38px;height:38px;border:3px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;}
+.ltxt{color:#fff;font-size:14px;font-weight:500;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.empty{text-align:center;padding:40px 20px;}
+.empty svg{width:44px;height:44px;stroke:var(--text3);fill:none;stroke-width:1.5;margin-bottom:10px;}
+.empty h3{font-size:15px;font-weight:600;color:var(--text2);margin-bottom:5px;}
+.empty p{font-size:12px;color:var(--text3);}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
+</head>
+<body>
+
+<div id="install-banner" style="display:none;position:fixed;bottom:calc(60px + env(safe-area-inset-bottom));left:0;right:0;margin:0 12px;background:#1a2744;border-radius:14px;padding:12px 16px;z-index:999;align-items:center;gap:12px;box-shadow:0 4px 24px rgba(0,0,0,0.4);">
+  <span style="font-size:24px">❄️</span>
+  <div style="flex:1">
+    <div style="color:#fff;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif">Instalar App CASSA</div>
+    <div style="color:rgba(255,255,255,0.6);font-size:11px;font-family:'DM Sans',sans-serif">Agregar a pantalla de inicio</div>
+  </div>
+  <button onclick="installApp()" style="background:#f5a623;color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">Instalar</button>
+  <button onclick="document.getElementById('install-banner').style.display='none'" style="background:none;border:none;color:rgba(255,255,255,0.5);font-size:20px;cursor:pointer;padding:0 4px;">×</button>
+</div>
+
+<div id="app">
+  <div class="tb" id="tb">
+    <button class="tb-back" id="tb-back" style="display:none" onclick="goBack()">&#8592;</button>
+    <div class="tb-info">
+      <div class="tb-title" id="tb-title">Equipos CASSA</div>
+      <div class="tb-sub" id="tb-sub">Chaparrastique · CASSA</div>
+    </div>
+    <button class="tb-btn" id="tb-btn" style="display:none"></button>
+  </div>
+
+  <div class="screen" id="screen"><div class="si" id="si"></div></div>
+
+  <nav class="tabbar">
+    <button class="tab active" onclick="nav('home')" id="tab-home">
+      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Inicio</span><div class="tind"></div>
+    </button>
+    <button class="tab" onclick="nav('list')" id="tab-list">
+      <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r=".5" fill="currentColor"/><circle cx="3" cy="12" r=".5" fill="currentColor"/><circle cx="3" cy="18" r=".5" fill="currentColor"/></svg>
+      <span>Equipos</span><div class="tind"></div>
+    </button>
+    <button class="tab" onclick="nav('reports')" id="tab-reports">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <span>Reportes</span><div class="tind"></div>
+    </button>
+    <button class="tab" onclick="nav('editor')" id="tab-editor">
+      <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      <span>Editor</span><div class="tind"></div>
+    </button>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+  <div class="loading" id="loading"><div class="spinner"></div><div class="ltxt" id="ltxt">Cargando...</div></div>
+</div>
+
+<script>
+// ═══════════════════════════ STORAGE ═══════════════════════════
+const DB = {
+  get(k, def=null){ try{ const v=localStorage.getItem(k); return v!==null?JSON.parse(v):def; }catch{ return def; } },
+  set(k,v){ localStorage.setItem(k,JSON.stringify(v)); },
+  del(k){ localStorage.removeItem(k); }
+};
+
+// ═══════════════════════ DEFAULT DATA ═══════════════════════════
+const DEFAULT_TYPES = [
+  { id:'bombas', name:'Bombas', color:'#2E75B6',
+    defaultParams:[
+      {key:'temp_motor',name:'Temperatura Motor',ref:'≤ 70',unit:'°C',type:'num',max:70,warn:65},
+      {key:'amp_motor',name:'Amperaje Motor',ref:'—',unit:'A',type:'num',max:null,warn:null},
+      {key:'presion',name:'Presión Descarga',ref:'—',unit:'PSI',type:'num',max:null,warn:null},
+      {key:'vib_motor',name:'Vibración Motor',ref:'< 15',unit:'mm/s',type:'num',max:15,warn:12},
+      {key:'vib_bomba',name:'Vibración Bomba',ref:'< 15',unit:'mm/s',type:'num',max:15,warn:12},
+      {key:'sello',name:'Estado Sello Mecánico',ref:'—',unit:'A/C',type:'ac'},
+      {key:'acoplamiento',name:'Estado Acoplamiento',ref:'—',unit:'A/C',type:'ac'},
+    ],
+    sections:[
+      { id:'s_magma_b', name:'Bombeo Magma B', equips:[
+        {id:'B001',code:'1001624',name:'Bomba 1 Magma B'},
+        {id:'B002',code:'1001625',name:'Bomba 2 Magma B'},
+        {id:'B003',code:'1001626',name:'Bomba 3 Magma B'},
+        {id:'B004',code:'1001627',name:'Bomba 4 Magma B'},
+      ]},
+      { id:'s_magma_c', name:'Bombeo Magma C', equips:[
+        {id:'B005',code:'1001645',name:'Bomba 1 Magma C'},
+        {id:'B006',code:'1001647',name:'Bomba 2 Magma C'},
+      ]},
+      { id:'s_masa', name:'Bombeo Masa Cocida', equips:[
+        {id:'B007',code:'1001513',name:'Bomba 1 Masa Cocida'},
+        {id:'B008',code:'1001515',name:'Bomba 2 Masa Cocida'},
+        {id:'B009',code:'1002050',name:'Bomba Descarga Masa OVC1'},
+      ]},
+      { id:'s_semilla', name:'Bombeo Semilla', equips:[
+        {id:'B010',code:'1001514',name:'Bomba 1 Semilla'},
+        {id:'B011',code:'1001516',name:'Bomba 2 Semilla'},
+      ]},
+      { id:'s_torres_b', name:'Torres Enfriamiento', equips:[
+        {id:'B012',code:'1001798',name:'Bomba 1 Torre Enfr. 3'},
+        {id:'B013',code:'1001801',name:'Bomba 2 Torre Enfr. 3'},
+        {id:'B014',code:'1002058',name:'Bomba 1 Torre Enfr. 6'},
+        {id:'B015',code:'1002478',name:'Bomba 1 Torre Enfr. 7'},
+      ]},
+      { id:'s_ovc1_b', name:'Bombeo OVC1', equips:[
+        {id:'B016',code:'1002049',name:'Bomba Agua Refrig. OVC1'},
+        {id:'B017',code:'1002052',name:'Bomba Aliment. Masa OVC1'},
+      ]},
+      { id:'s_vacio', name:'Vacío Condensadores', equips:[
+        {id:'B018',code:'1001551',name:'Bomba Vacío Cond. Tacho 6'},
+        {id:'B019',code:'1001552',name:'Bomba Vacío Cond. Tacho 7'},
+        {id:'B020',code:'1001565',name:'Bomba Vacío Cond. Tacho 8'},
+      ]},
+      { id:'s_rebalse', name:'Rebalse', equips:[
+        {id:'B021',code:'1001563',name:'Bomba Rebalse Cristalizador 3'},
+      ]},
+    ]
+  },
+  { id:'cristalizadores', name:'Cristalizadores', color:'#1a7044',
+    defaultParams:[
+      {key:'temp_motor',name:'Temperatura Motor',ref:'≤ 70',unit:'°C',type:'num',max:70,warn:65},
+      {key:'amp_motor',name:'Amperaje Motor',ref:'—',unit:'A',type:'num',max:null,warn:null},
+      {key:'vib_motor',name:'Vibración Motor',ref:'< 15',unit:'mm/s',type:'num',max:15,warn:12},
+      {key:'vib_reductor',name:'Vibración Reductor',ref:'< 15',unit:'mm/s',type:'num',max:15,warn:12},
+      {key:'acoplamiento',name:'Estado Acoplamiento',ref:'—',unit:'A/C',type:'ac'},
+      {key:'transmision',name:'Estado Transmisión',ref:'—',unit:'A/C',type:'ac'},
+    ],
+    sections:[
+      { id:'s_crist_c', name:'Cristalizadores Masa C', equips:[
+        {id:'C001',code:'1001569',name:'Cristalizador 1 Masa Cocida C'},
+        {id:'C002',code:'1001570',name:'Cristalizador 2 Masa Cocida C'},
+        {id:'C003',code:'1001571',name:'Cristalizador 3 Masa Cocida C'},
+      ]},
+      { id:'s_crist_ovc', name:'OVC1', equips:[
+        {id:'C004',code:'1002029',name:'Cristalizador Vertical OVC1'},
+      ]},
+      { id:'s_mezc_a', name:'Mezcladores Masa A', equips:[
+        {id:'C005',code:'1001659',name:'Mezclador 1 Masa Cocida A'},
+        {id:'C006',code:'1001660',name:'Mezclador 2 Masa Cocida A'},
+      ]},
+      { id:'s_mezc_b', name:'Mezcladores Masa B/OVC1', equips:[
+        {id:'C007',code:'1001641',name:'Mezclador Masa Cocida B'},
+        {id:'C008',code:'1002056',name:'Mezclador Masa OVC1'},
+      ]},
+      { id:'s_rec_a', name:'Recibidores Masa A', equips:[
+        {id:'C009',code:'1001539',name:'Recibidor 1 Masa Cocida A'},
+        {id:'C010',code:'1001540',name:'Recibidor 2 Masa Cocida A'},
+      ]},
+      { id:'s_rec_b', name:'Recibidores Masa B', equips:[
+        {id:'C011',code:'1001586',name:'Recibidor 1 Masa Cocida B'},
+        {id:'C012',code:'1001587',name:'Recibidor 2 Masa Cocida B'},
+      ]},
+      { id:'s_semilleros', name:'Semilleros', equips:[
+        {id:'C013',code:'1001541',name:'Semillero Magma B'},
+        {id:'C014',code:'1001588',name:'Semillero Magma C'},
+      ]},
+    ]
+  },
+  { id:'torres', name:'Torres / Secadores', color:'#7c3aed',
+    defaultParams:[
+      {key:'temp_motor',name:'Temp. Motor Ventilador',ref:'≤ 70',unit:'°C',type:'num',max:70,warn:65},
+      {key:'amp_motor',name:'Amp. Motor Ventilador',ref:'—',unit:'A',type:'num',max:null,warn:null},
+      {key:'temp_entrada',name:'Temp. Agua Entrada',ref:'—',unit:'°C',type:'num',max:null,warn:null},
+      {key:'temp_salida',name:'Temp. Agua Salida',ref:'—',unit:'°C',type:'num',max:null,warn:null},
+      {key:'vib_motor',name:'Vibración Motor',ref:'< 15',unit:'mm/s',type:'num',max:15,warn:12},
+      {key:'relleno',name:'Estado Relleno',ref:'—',unit:'A/C',type:'ac'},
+      {key:'aspersores',name:'Estado Aspersores',ref:'—',unit:'A/C',type:'ac'},
+    ],
+    sections:[
+      { id:'s_torres_fab', name:'Torres Fábrica', equips:[
+        {id:'T001',code:'1001808',name:'Torre Enfriamiento 3 Fábrica'},
+        {id:'T002',code:'1001809',name:'Torre Enfriamiento 4 Fábrica'},
+      ]},
+      { id:'s_torres_mel', name:'Torres Melaza', equips:[
+        {id:'T003',code:'1001810',name:'Torre Enfriamiento 5 Melaza'},
+      ]},
+      { id:'s_secadores', name:'Secadores-Enfriadores', equips:[
+        {id:'T004',code:'1001670',name:'Secador-Enfriador 1'},
+        {id:'T005',code:'1001671',name:'Secador-Enfriador 2'},
+      ]},
+    ]
+  },
+  { id:'graneros', name:'Graneros / Otros', color:'#b45309',
+    defaultParams:[
+      {key:'temp_motor',name:'Temperatura Motor',ref:'≤ 70',unit:'°C',type:'num',max:70,warn:65},
+      {key:'amp_motor',name:'Amperaje Motor',ref:'—',unit:'A',type:'num',max:null,warn:null},
+      {key:'transmision',name:'Estado Transmisión',ref:'—',unit:'A/C',type:'ac'},
+      {key:'aspas',name:'Estado Aspas/Banda',ref:'—',unit:'A/C',type:'ac'},
+      {key:'vib_reductor',name:'Vibración Reductor',ref:'< 15',unit:'mm/s',type:'num',max:15,warn:12},
+      {key:'vib_motor',name:'Vibración Motor',ref:'< 15',unit:'mm/s',type:'num',max:15,warn:12},
+    ],
+    sections:[
+      { id:'s_graneros', name:'Graneros Azúcar', equips:[
+        {id:'G001',code:'1001577',name:'Granero 1 de Tercera'},
+        {id:'G002',code:'1001578',name:'Granero 2 de Tercera'},
+        {id:'G003',code:'1001532',name:'Granero de Primera'},
+      ]},
+      { id:'s_tanques', name:'Tanques y Captadores', equips:[
+        {id:'G004',code:'1001511',name:'Tanque Fundición Magma #1'},
+        {id:'G005',code:'1001546',name:'Tanque Fundición Magma #2'},
+        {id:'G006',code:'1001628',name:'Captador Miel B'},
+        {id:'G007',code:'1001663',name:'Disolutor de Polvillo'},
+        {id:'G008',code:'1001657',name:'Lavado de Azúcar 2'},
+      ]},
+      { id:'s_dosif', name:'Dosificadores', equips:[
+        {id:'G009',code:'1001664',name:'Dosificador Vitamina A'},
+        {id:'G010',code:'1002051',name:'Dosificación Agua Caliente OVC1'},
+        {id:'G011',code:'1002053',name:'Distribuidor Masa Cocida OVC1'},
+      ]},
+      { id:'s_bandas', name:'Bandas', equips:[
+        {id:'G012',code:'1001661',name:'Banda a Sinfín Secadora'},
+      ]},
+    ]
+  }
+];
+
+// ═══════════════════════ DATA ACCESS ════════════════════════════
+function getTypes(){ return DB.get('eq_types', DEFAULT_TYPES); }
+function saveTypes(t){ DB.set('eq_types',t); }
+
+function uid(){ return Math.random().toString(36).slice(2,9); }
+
+function getAllEquips(){
+  const all=[];
+  for(const t of getTypes())
+    for(const s of t.sections)
+      for(const e of s.equips)
+        all.push({...e, typeId:t.id, typeName:t.name, typeColor:t.color, sectionId:s.id, sectionName:s.name, params:getParamsForEquip(t,e.id)});
+  return all;
+}
+
+function getParamsForEquip(type, equipId){
+  // check per-equip override, else use section override, else type default
+  const eq = type.sections.flatMap(s=>s.equips).find(e=>e.id===equipId);
+  return eq?.params || type.defaultParams;
+}
+
+function loadEntry(week, equipId){ return DB.get(`e_${week}_${equipId}`,{}); }
+function saveEntry(week, equipId, data){ DB.set(`e_${week}_${equipId}`,data); }
+
+function getCfg(){ return DB.get('cfg',{currentWeek:1,totalWeeks:12,startDate:'',folderId:''}); }
+function getCurWeek(){ return getCfg().currentWeek||1; }
+
+function weekDateRange(w){
+  const cfg=getCfg();
+  if(!cfg.startDate) return `Semana ${w}`;
+  const d=new Date(cfg.startDate);
+  d.setDate(d.getDate()+(w-1)*7);
+  const e=new Date(d); e.setDate(e.getDate()+6);
+  return `${d.getDate()}/${d.getMonth()+1} – ${e.getDate()}/${e.getMonth()+1}`;
+}
+
+function getStats(week){
+  const all=getAllEquips(); let done=0,partial=0,alerts=[];
+  for(const eq of all){
+    const en=loadEntry(week,eq.id);
+    const params=eq.params;
+    const filled=params.filter(p=>en[p.key]!==undefined&&en[p.key]!=='');
+    const hasObs = en.obs && en.obs.trim() !== '';
+    if(params.length>0 && (filled.length === params.length || (filled.length > 0 && hasObs))) done++;
+    else if(filled.length>0 || hasObs) partial++;
+    const np=params.filter(p=>p.type==='num');
+    for(const p of np){
+      if(p.max&&en[p.key]!==undefined&&en[p.key]!==''){
+        const v=parseFloat(en[p.key]);
+        if(!isNaN(v)&&v>p.max) alerts.push({equip:eq.name,param:p.name,value:v,ref:p.max,sev:'danger'});
+        else if(p.warn&&!isNaN(v)&&v>p.warn) alerts.push({equip:eq.name,param:p.name,value:v,ref:p.max,sev:'warn'});
+      }
+    }
+  }
+  return {total:all.length,done,partial,pending:all.length-done-partial,alerts};
+}
+
+// ═════════════════════════ STATE ════════════════════════════════
+let _screen='home', _prevScreen='home', _curEquip=null, _listType=null, _repWeek=1;
+let _repCharts={};
+
+// ═════════════════════════ NAV ══════════════════════════════════
+function nav(s, opts={}){
+  _prevScreen=_screen; _screen=s;
+  ['home','list','reports','editor'].forEach(x=>{
+    document.getElementById('tab-'+x)?.classList.toggle('active',x===s);
+  });
+  setTb();
+  if(s==='home') renderHome();
+  else if(s==='list'){ _listType=opts.type||null; renderList(); }
+  else if(s==='form'){ _curEquip=opts.equip; renderForm(); }
+  else if(s==='reports'){ _repWeek=getCurWeek(); renderReports(); }
+  else if(s==='editor') renderEditor();
+  else if(s==='edittype') renderEditType(opts.typeId);
+  else if(s==='editsection') renderEditSection(opts.typeId, opts.sectionId);
+}
+
+function goBack(){
+  if(_screen==='form') nav('list',{type:_curEquip?.typeId});
+  else if(_screen==='edittype') nav('editor');
+  else if(_screen==='editsection') nav('edittype',{typeId:_editTypeId});
+  else nav('home');
+}
+
+function setTb(){
+  const title=document.getElementById('tb-title');
+  const sub=document.getElementById('tb-sub');
+  const btn=document.getElementById('tb-btn');
+  const back=document.getElementById('tb-back');
+  btn.style.display='none'; back.style.display='none';
+  const map={
+    home:['Equipos CASSA','Chaparrastique · Dirección Industrial'],
+    list:[_listType?getTypes().find(t=>t.id===_listType)?.name||'Equipos':'Todos los Equipos','Selecciona un equipo'],
+    form:[_curEquip?.name||'Equipo',_curEquip?.typeName+' · '+_curEquip?.sectionName||''],
+    reports:['Reportes Semanales','Tendencia y alertas'],
+    editor:['Editor de Equipos','Gestionar grupos y parámetros'],
+    edittype:['Editar Tipo','Grupos y equipos'],
+    editsection:['Editar Grupo','Equipos y parámetros'],
+  };
+  const [t,s]=map[_screen]||['Equipos CASSA',''];
+  title.textContent=t; sub.textContent=s;
+  if(['form','edittype','editsection'].includes(_screen)){
+    back.style.display='flex';
+  }
+}
+
+// ═════════════════════════ HOME ═════════════════════════════════
+function renderHome(){
+  const w=getCurWeek(), st=getStats(w);
+  const pct=Math.round(st.done/st.total*100)||0;
+  const types=getTypes();
+  const driveCfg=getDriveCfg();
+  const driveBar = driveCfg.clientId ? `
+    <div class="drive-sync-bar">
+      <div style="font-size:20px">☁️</div>
+      <div class="drive-sync-info">
+        <div class="drive-sync-title">Google Drive ${driveState.token?'Conectado':'Desconectado'}</div>
+        <div class="drive-sync-sub">${driveState.lastSync?'Última sync: '+driveState.lastSync:'Sin sincronizar aún'}</div>
+      </div>
+      ${driveState.token
+        ? `<button onclick="drivePush()" style="background:var(--navy);color:#fff;border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;cursor:pointer">↑ Subir</button>`
+        : `<button onclick="driveLogin()" style="background:#4285f4;color:#fff;border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;cursor:pointer">Conectar</button>`}
+    </div>` : '';
+  document.getElementById('si').innerHTML=`
+    ${driveBar}
+    <div class="hero">
+      <div class="hero-lbl">Programa de Equipos 2025</div>
+      <div class="hero-title">Semana ${w}</div>
+      <div class="hero-sub">${st.done} de ${st.total} equipos completados</div>
+      <div class="hero-bar"><div class="hero-fill" style="width:${pct}%"></div></div>
+      <div class="hero-pct">${pct}% completado</div>
+    </div>
+    <div class="stats3">
+      <div class="sc"><div class="sc-val" style="color:var(--ok)">${st.done}</div><div class="sc-lbl">Completados</div></div>
+      <div class="sc"><div class="sc-val" style="color:var(--warn)">${st.partial}</div><div class="sc-lbl">Parciales</div></div>
+      <div class="sc"><div class="sc-val" style="color:${st.alerts.length?'var(--danger)':'var(--ok)'}">${st.alerts.length}</div><div class="sc-lbl">Alertas</div></div>
+    </div>
+    <div class="sec-lbl">Tipos de Equipo</div>
+    <div class="type-grid">
+      ${types.map(t=>{
+        const equips=t.sections.flatMap(s=>s.equips);
+        const done=equips.filter(eq=>{
+          const en=loadEntry(w,eq.id);
+          const params=getParamsForEquip(t,eq.id);
+          if(!params.length) return false;
+          // Se considera hecho si tiene al menos un parámetro lleno o tiene observaciones
+          const hasData = params.some(p=>en[p.key]!==undefined && en[p.key]!=='');
+          const hasObs = en.obs && en.obs.trim() !== '';
+          return hasData || hasObs;
+        }).length;
+        const p2=equips.length>0?Math.round(done/equips.length*100):0;
+        return `<div class="tc" onclick="nav('list',{type:'${t.id}'})">
+          <div class="tc-ico" style="background:${t.color}22">
+            ${typeIconSvg(t.id,t.color)}
+          </div>
+          <h3>${t.name}</h3>
+          <p>${equips.length} equipos</p>
+          <div class="pb"><div class="pbf" style="width:${p2}%;background:${t.color}"></div></div>
+          <div style="font-size:10px;color:var(--text2);margin-top:3px">${done}/${equips.length} · ${p2}%</div>
+        </div>`;
+      }).join('')}
+    </div>
+    ${st.alerts.length?`
+      <div class="sec-lbl">⚠ Alertas activas</div>
+      ${st.alerts.slice(0,4).map(a=>`
+        <div class="al-item ${a.sev==='warn'?'al-warn':''}">
+          <div class="al-dot ${a.sev==='warn'?'w':''}"></div>
+          <div>
+            <div class="al-eq">${a.equip}</div>
+            <div class="al-par">${a.param}</div>
+            <div class="al-vals" style="color:${a.sev==='danger'?'var(--danger)':'var(--warn)'}">
+              Medido: ${a.value} · Límite: ≤ ${a.ref}
+            </div>
+          </div>
+        </div>`).join('')}
+      ${st.alerts.length>4?`<div style="text-align:center;font-size:12px;color:var(--text2);padding:8px 0">+${st.alerts.length-4} más en Reportes</div>`:''}
+    `:''}
+  `;
+}
+
+function typeIconSvg(id,color){
+  const s=`stroke:${color};stroke-width:1.8;fill:none`;
+  const icons={
+    bombas:`<svg viewBox="0 0 24 24" style="${s}"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41"/></svg>`,
+    cristalizadores:`<svg viewBox="0 0 24 24" style="${s}"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="2" x2="12" y2="22"/></svg>`,
+    torres:`<svg viewBox="0 0 24 24" style="${s}"><path d="M8 6v6l-4 8h16l-4-8V6"/><rect x="4" y="2" width="16" height="4" rx="1"/></svg>`,
+    graneros:`<svg viewBox="0 0 24 24" style="${s}"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  };
+  return icons[id]||`<svg viewBox="0 0 24 24" style="${s}"><circle cx="12" cy="12" r="8"/></svg>`;
+}
+
+// ═════════════════════════ LIST ══════════════════════════════════
+function renderList(){
+  const w=getCurWeek();
+  const types=getTypes();
+  const filtered=_listType?types.filter(t=>t.id===_listType):types;
+  setTb();
+  document.getElementById('si').innerHTML=`
+    <div class="srch">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Buscar equipo..." oninput="filterSearch(this.value)">
+    </div>
+    <div id="eq-list">
+      ${filtered.map(t=>t.sections.map(sec=>`
+        <div class="grp-hd">
+          <span>${_listType?'':t.name+' — '}${sec.name}</span>
+          <span>${sec.equips.length} eq.</span>
+        </div>
+        ${sec.equips.map(eq=>{
+          const params=getParamsForEquip(t,eq.id);
+          const en=loadEntry(w,eq.id);
+          const np=params.filter(p=>p.type==='num');
+          const filled=np.filter(p=>en[p.key]!==undefined&&en[p.key]!=='');
+          const hasAlert=np.some(p=>p.max&&en[p.key]!==undefined&&parseFloat(en[p.key])>p.max);
+          const status=hasAlert?'alert':filled.length===np.length&&np.length>0?'done':filled.length>0?'partial':'pending';
+          const badges=[];
+          if(en.stat_mant) badges.push('<span class="badge mant">🔧 Mantenimiento</span>');
+          if(en.stat_ok) badges.push('<span class="badge ok2">✅ OK</span>');
+          if(en.stat_rev) badges.push('<span class="badge rev">⚠ Revisión</span>');
+          return `<div class="er" onclick="openForm('${eq.id}','${t.id}')">
+            <div class="er-dot ${status}"></div>
+            <div class="er-info">
+              <div class="er-name">${eq.name}</div>
+              <div class="er-sub">${eq.code} · ${filled.length}/${np.length} parámetros</div>
+              ${badges.length?`<div class="eq-badges">${badges.join('')}</div>`:''}
+            </div>
+            <svg class="er-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>`;
+        }).join('')}
+      `).join('')).join('')}
+    </div>
+  `;
+}
+
+function filterSearch(q){
+  document.querySelectorAll('.er').forEach(r=>{
+    const txt=(r.querySelector('.er-name')?.textContent||'')+(r.querySelector('.er-sub')?.textContent||'');
+    r.style.display=txt.toLowerCase().includes(q.toLowerCase())?'':'none';
+  });
+}
+
+function openForm(equipId, typeId){
+  const types=getTypes();
+  const t=types.find(x=>x.id===typeId);
+  let eq=null, sec=null;
+  for(const s of t.sections){ const f=s.equips.find(e=>e.id===equipId); if(f){eq=f;sec=s;break;} }
+  _curEquip={...eq, typeId:t.id, typeName:t.name, typeColor:t.color, sectionId:sec.id, sectionName:sec.name, params:getParamsForEquip(t,eq.id)};
+  nav('form',{equip:_curEquip});
+}
+
+// ═════════════════════════ FORM ══════════════════════════════════
+let _formWeek=null;
+function renderForm(){
+  const eq=_curEquip;
+  const w=_formWeek||getCurWeek();
+  const en=loadEntry(w,eq.id);
+  const cfg=getCfg();
+  const total=cfg.totalWeeks||12;
+  const chips=[];
+  for(let x=Math.max(1,w-2);x<=Math.min(total,w+2);x++) chips.push(x);
+
+  document.getElementById('si').innerHTML=`
+    <div class="fhdr">
+      <div class="fhdr-code">${eq.code}</div>
+      <div class="fhdr-name">${eq.name}</div>
+      <div class="fhdr-sys">${eq.sectionName}</div>
+    </div>
+    <div class="flbl">Estado del equipo</div>
+    <div class="status-grid">
+      <div class="stog ${en.stat_mant?'act-mant':''}" onclick="togStatus(this,'stat_mant')">
+        <span class="stog-ico">🔧</span>
+        <div class="stog-info"><div class="stog-name">En Mantenimiento</div><div class="stog-hint">Intervenido</div></div>
+        <div class="stog-ck">✓</div>
+      </div>
+      <div class="stog ${en.stat_ok?'act-ok':''}" onclick="togStatus(this,'stat_ok')">
+        <span class="stog-ico">✅</span>
+        <div class="stog-info"><div class="stog-name">Buenas Condiciones</div><div class="stog-hint">Listo para operar</div></div>
+        <div class="stog-ck">✓</div>
+      </div>
+      <div class="stog ${en.stat_rev?'act-rev':''}" onclick="togStatus(this,'stat_rev')">
+        <span class="stog-ico">⚠️</span>
+        <div class="stog-info"><div class="stog-name">Requiere Revisión</div><div class="stog-hint">Pendiente atención</div></div>
+        <div class="stog-ck">✓</div>
+      </div>
+    </div>
+    <div class="flbl">Semana de medición</div>
+    <div class="wchips" id="wchips">
+      ${chips.map(x=>`<div class="wchip ${x===w?'active':''}" onclick="selWeek(${x})">
+        <b>Sem ${x}</b><small>${weekDateRange(x)}</small>
+      </div>`).join('')}
+    </div>
+    <div class="flbl">Parámetros</div>
+    <div id="params">${renderParams(eq.params, en)}</div>
+    <div class="flbl">Responsables</div>
+    <div class="ti-row">
+      <input class="ti" type="text" placeholder="Téc. Mecánico" id="tec_mec" value="${en.tec_mec||''}">
+      <input class="ti" type="text" placeholder="Téc. Eléctrico" id="tec_elec" value="${en.tec_elec||''}">
+    </div>
+    <input class="ti" type="text" placeholder="Responsable" id="responsable" value="${en.responsable||''}" style="margin-bottom:9px;">
+    <div class="flbl">Observaciones</div>
+    <textarea class="txta" id="obs">${en.obs||''}</textarea>
+    <button class="savebtn" onclick="saveForm()">
+      <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+      Guardar Medición
+    </button>
+    <div style="height:20px"></div>
+  `;
+}
+
+function renderParams(params, en){
+  return params.map(p=>{
+    if(p.type==='ac'){
+      const v=en[p.key]||'';
+      return `<div class="pc">
+        <div class="ph"><span class="pname">${p.name}</span><span class="pref">${p.unit}</span></div>
+        <div class="ac-row">
+          <button class="ac-btn ${v==='ok'?'sel-ok':''}" onclick="selAC(this,'${p.key}','ok')">✅ Bueno</button>
+          <button class="ac-btn ${v==='mal'?'sel-bad':''}" onclick="selAC(this,'${p.key}','mal')">❌ Malo</button>
+          <button class="ac-btn ${v==='na'?'sel-na':''}" onclick="selAC(this,'${p.key}','na')">— N/A</button>
+        </div>
+      </div>`;
+    }
+    const v=en[p.key]!==undefined?en[p.key]:'';
+    let cls='',ico='';
+    if(v!==''&&p.max){const n=parseFloat(v);if(!isNaN(n)){if(n>p.max){cls='pal';ico='🔴';}else if(p.warn&&n>p.warn){cls='pwarn';ico='🟡';}else ico='🟢';}}
+    else if(v!=='') ico='🟢';
+    return `<div class="pc ${cls}" id="pc_${p.key}">
+      <div class="ph"><span class="pname">${p.name}</span><span class="pref">Ref: ${p.ref}</span></div>
+      <div class="prow">
+        <input class="pinp ${cls==='pal'?'pal2':cls==='pwarn'?'pwarn2':v!==''&&ico==='🟢'?'pok':''}"
+          type="number" inputmode="decimal" step="0.1" placeholder="—"
+          id="p_${p.key}" value="${v}"
+          onchange="valP('${p.key}',${p.max||null},${p.warn||null},this)">
+        <span class="punit">${p.unit}</span>
+        <span class="pico" id="pi_${p.key}">${ico}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function selWeek(w){
+  _formWeek=w;
+  document.querySelectorAll('.wchip').forEach(c=>c.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  const en=loadEntry(w,_curEquip.id);
+  document.getElementById('params').innerHTML=renderParams(_curEquip.params,en);
+  document.getElementById('obs').value=en.obs||'';
+  document.getElementById('tec_mec').value=en.tec_mec||'';
+  document.getElementById('tec_elec').value=en.tec_elec||'';
+  document.getElementById('responsable').value=en.responsable||'';
+}
+
+function selAC(btn,key,val){
+  btn.closest('.ac-row').querySelectorAll('.ac-btn').forEach(b=>b.classList.remove('sel-ok','sel-bad','sel-na'));
+  if(val==='ok') btn.classList.add('sel-ok');
+  else if(val==='mal') btn.classList.add('sel-bad');
+  else btn.classList.add('sel-na');
+}
+
+function togStatus(el,key){
+  const classes={stat_mant:'act-mant',stat_ok:'act-ok',stat_rev:'act-rev'};
+  const cls=classes[key];
+  el.classList.toggle(cls);
+}
+
+function getStatuses(){
+  return {
+    stat_hib: document.querySelector('.stog.act-hib')!==null && !!document.querySelector('[onclick*="stat_hib"]')?.classList.contains('act-hib'),
+    stat_mant: !!document.querySelector('[onclick*="stat_mant"]')?.classList.contains('act-mant'),
+    stat_ok:   !!document.querySelector('[onclick*="stat_ok"]')?.classList.contains('act-ok'),
+    stat_rev:  !!document.querySelector('[onclick*="stat_rev"]')?.classList.contains('act-rev'),
+  };
+}
+
+function valP(key,max,warn,inp){
+  const v=parseFloat(inp.value), pc=document.getElementById('pc_'+key), pi=document.getElementById('pi_'+key);
+  inp.classList.remove('pok','pal2','pwarn2');
+  pc.classList.remove('pal','pwarn');
+  if(!isNaN(v)){
+    if(max&&v>max){inp.classList.add('pal2');pc.classList.add('pal');pi.textContent='🔴';}
+    else if(warn&&v>warn){inp.classList.add('pwarn2');pc.classList.add('pwarn');pi.textContent='🟡';}
+    else{inp.classList.add('pok');pi.textContent='🟢';}
+  } else pi.textContent='';
+}
+
+function saveForm(){
+  const w=_formWeek||getCurWeek();
+  const data={savedAt:new Date().toISOString()};
+  // statuses
+  data.stat_mant=!!document.querySelector('[onclick*="stat_mant"]')?.classList.contains('act-mant');
+  data.stat_ok=!!document.querySelector('[onclick*="stat_ok"]')?.classList.contains('act-ok');
+  data.stat_rev=!!document.querySelector('[onclick*="stat_rev"]')?.classList.contains('act-rev');
+  for(const p of _curEquip.params){
+    if(p.type==='ac'){
+      const row=document.querySelector(`.ac-row .ac-btn[onclick*="'${p.key}'"]:not(.ac-btn:not([class*='sel']))`);
+      const selBtn=[...document.querySelectorAll(`.ac-row .ac-btn`)].find(b=>
+        b.getAttribute('onclick')?.includes("'"+p.key+"'") &&
+        (b.classList.contains('sel-ok')||b.classList.contains('sel-bad')||b.classList.contains('sel-na'))
+      );
+      if(selBtn){
+        if(selBtn.classList.contains('sel-ok')) data[p.key]='ok';
+        else if(selBtn.classList.contains('sel-bad')) data[p.key]='mal';
+        else data[p.key]='na';
+      }
+    } else {
+      const inp=document.getElementById('p_'+p.key);
+      if(inp) data[p.key]=inp.value;
+    }
+  }
+  data.tec_mec=document.getElementById('tec_mec')?.value||'';
+  data.tec_elec=document.getElementById('tec_elec')?.value||'';
+  data.responsable=document.getElementById('responsable')?.value||'';
+  data.obs=document.getElementById('obs')?.value||'';
+  saveEntry(w,_curEquip.id,data);
+  toast('✓ Guardado','ok');
+}
+
+// ═════════════════════════ REPORTS ══════════════════════════════
+function renderReports(){
+  const w=_repWeek, st=getStats(w);
+  const cfg=getCfg(), total=cfg.totalWeeks||12;
+  document.getElementById('si').innerHTML=`
+    <div class="week-sel">
+      <button class="wnav" onclick="chRepWeek(-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div><div class="wlbl">Semana ${w}</div><div class="wdate">${weekDateRange(w)}</div></div>
+      <button class="wnav" onclick="chRepWeek(1)"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+    <div class="rep-grid">
+      <div class="rsc"><div class="rsc-lbl">Completados</div><div class="rsc-val" style="color:var(--ok)">${st.done}</div></div>
+      <div class="rsc"><div class="rsc-lbl">Pendientes</div><div class="rsc-val" style="color:var(--danger)">${st.pending}</div></div>
+      <div class="rsc"><div class="rsc-lbl">Alertas</div><div class="rsc-val" style="color:${st.alerts.length?'var(--danger)':'var(--ok)'}">${st.alerts.length}</div></div>
+      <div class="rsc"><div class="rsc-lbl">Avance</div><div class="rsc-val" style="color:var(--blue)">${Math.round(st.done/st.total*100)||0}%</div></div>
+    </div>
+    <div class="exp-row">
+      <button class="ebtn" style="background:#6d28d9;color:#fff" onclick="showExportPreview()">
+        <svg viewBox="0 0 24 24" style="stroke:#fff"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Vista Previa
+      </button>
+      <button class="ebtn excel" onclick="exportXLSX()">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Exportar Excel
+      </button>
+      <button class="ebtn drive" onclick="drivePush()" id="btn-drive-push">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <span id="btn-drive-push-lbl">↑ Drive</span>
+      </button>
+      <button class="ebtn" style="background:#0f9d58;color:#fff" onclick="drivePull()" id="btn-drive-pull">
+        <svg viewBox="0 0 24 24" style="stroke:#fff"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>↓ Drive</span>
+      </button>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Avance por tipo</div>
+      <div class="chart-sub">Semana ${w}</div>
+      <div class="chw"><canvas id="ch-type"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Tendencia semanal</div>
+      <div class="chart-sub">% completado — semanas 1 a ${w}</div>
+      <div class="chw"><canvas id="ch-trend"></canvas></div>
+    </div>
+    ${st.alerts.length?`
+      <div style="font-size:13px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+        <span style="color:var(--danger)">●</span> Parámetros fuera de rango
+      </div>
+      ${st.alerts.map(a=>`
+        <div class="al-item ${a.sev==='warn'?'al-warn':''}">
+          <div class="al-dot ${a.sev==='warn'?'w':''}"></div>
+          <div>
+            <div class="al-eq">${a.equip}</div>
+            <div class="al-par">${a.param}</div>
+            <div class="al-vals" style="color:${a.sev==='danger'?'var(--danger)':'var(--warn)'}">
+              Medido: ${a.value} · Límite: ≤ ${a.ref}
+            </div>
+          </div>
+        </div>`).join('')}
+    `:`<div style="text-align:center;padding:18px;color:var(--ok);font-weight:500">✓ Sin alertas esta semana</div>`}
+    <div style="height:20px"></div>
+  `;
+  setTimeout(()=>{ drawTypeChart(w,st); drawTrendChart(w); }, 80);
+}
+
+function chRepWeek(d){ const cfg=getCfg(); _repWeek=Math.max(1,Math.min(cfg.totalWeeks||12,_repWeek+d)); renderReports(); }
+
+function drawTypeChart(w,st){
+  const ctx=document.getElementById('ch-type'); if(!ctx) return;
+  if(_repCharts.type){_repCharts.type.destroy();}
+  const types=getTypes();
+  const labels=[], done=[], totals=[], colors=[];
+  for(const t of types){
+    const equips=t.sections.flatMap(s=>s.equips);
+    const d=equips.filter(eq=>{
+      const en=loadEntry(w,eq.id), np=t.defaultParams.filter(p=>p.type==='num');
+      return np.length>0&&np.every(p=>en[p.key]!==undefined&&en[p.key]!=='');
+    }).length;
+    labels.push(t.name.length>10?t.name.slice(0,10)+'…':t.name);
+    done.push(d); totals.push(equips.length); colors.push(t.color);
+  }
+  _repCharts.type=new Chart(ctx,{type:'bar',data:{labels,datasets:[
+    {label:'Completados',data:done,backgroundColor:colors.map(c=>c+'cc')},
+    {label:'Total',data:totals,backgroundColor:colors.map(c=>c+'33')},
+  ]},options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:10}}},
+    scales:{y:{beginAtZero:true,ticks:{font:{size:10}}},x:{ticks:{font:{size:10}}}}}});
+}
+
+function drawTrendChart(upTo){
+  const ctx=document.getElementById('ch-trend'); if(!ctx) return;
+  if(_repCharts.trend){_repCharts.trend.destroy();}
+  const all=getAllEquips(), labels=[], data=[];
+  for(let w=1;w<=upTo;w++){
+    labels.push('S'+w);
+    const s=getStats(w);
+    data.push(Math.round(s.done/all.length*100)||0);
+  }
+  _repCharts.trend=new Chart(ctx,{type:'line',data:{labels,datasets:[{
+    label:'% Completado',data,borderColor:'#2E75B6',backgroundColor:'#2E75B615',
+    fill:true,tension:0.4,pointRadius:3,
+  }]},options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false}},
+    scales:{y:{beginAtZero:true,max:100,ticks:{font:{size:10},callback:v=>v+'%'}},x:{ticks:{font:{size:10}}}}}});
+}
+
+// ═════════════════════════ EXPORT — SheetJS con estilos ════════════════════
+// Formato idéntico al reporte ejecutivo de muestra. Sin referencias a "Equipos CASSA".
+
+function exportXLSX(){
+  exportXLSXCustom(null);
+}
+
+function exportXLSXCustom(bg){
+  const w=_repWeek;
+  const types=getTypes();
+  const cfg=getCfg();
+  const today=new Date().toLocaleDateString('es-SV');
+  const semLabel='SEMANA '+w+(cfg.startDate?' | '+weekDateRange(w):'');
+  showLoading('Generando Excel...');
+
+  // ── Helpers de datos ─────────────────────────────────────────
+  function fv(val,type){
+    if(val===undefined||val===null||val==='') return '—';
+    if(type==='ac') return val==='ok'?'Bueno':val==='mal'?'Malo':val==='na'?'N/A':val;
+    return String(val);
+  }
+  function fmtEstado(en){
+    const s=[];
+    if(en.stat_mant) s.push('🔧 Mantto');
+    if(en.stat_ok)   s.push('✅ OK');
+    if(en.stat_rev)  s.push('⚠ Revisión');
+    return s.join('  ')||'—';
+  }
+
+  // ── Estilos SheetJS (requiere xlsx con write-options cell_styles) ─────────
+  // Usamos el formato de estilo inline de SheetJS Community
+  function st(v, style){ return { v, s: style }; }
+
+  // Paleta de colores exacta del archivo muestra
+  const C={
+    navy:'1A2744', blue:'2E75B6', gold:'D97706',
+    green:'1A7044', red:'C0392B', amber:'F5A623',
+    white:'FFFFFF', navy_text:'1A2744',
+    bg_light:'F8FAFF', bg_info:'F0F4FA',
+    bg_col_hdr:'D6E4F5', bg_rev:'FEE2E2',
+    bg_ok_light:'D1FAE5', bg_amber_light:'FEF3C7',
+    footer_text:'888888'
+  };
+
+  function fill(rgb){ return { patternType:'solid', fgColor:{rgb} }; }
+  function font(opts){ return Object.assign({name:'Arial',sz:10,color:{rgb:C.white}},opts); }
+
+  // Style presets matching the sample exactly
+  const S={
+    TITLE:    { font:font({bold:true,sz:18}),     fill:fill(C.navy),   alignment:{horizontal:'center',vertical:'center'} },
+    SUBTITLE: { font:font({sz:12}),               fill:fill(C.blue),   alignment:{horizontal:'center',vertical:'center'} },
+    INFO:     { font:font({sz:10,color:{rgb:C.navy_text}}), fill:fill(C.bg_info), alignment:{horizontal:'center',vertical:'center'} },
+    KPI_NAVY: { font:font({bold:true,sz:8}),      fill:fill(C.navy),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_BLUE: { font:font({bold:true,sz:8}),      fill:fill(C.blue),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_GOLD: { font:font({bold:true,sz:8}),      fill:fill(C.gold),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_GREEN:{ font:font({bold:true,sz:8}),      fill:fill(C.green),  alignment:{horizontal:'center',vertical:'center'} },
+    KPI_RED:  { font:font({bold:true,sz:8}),      fill:fill(C.red),    alignment:{horizontal:'center',vertical:'center'} },
+    KPI_AMB:  { font:font({bold:true,sz:8}),      fill:fill(C.amber),  alignment:{horizontal:'center',vertical:'center'} },
+    KPI_VAL_NAVY:{ font:font({bold:true,sz:22}),  fill:fill(C.navy),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_VAL_BLUE:{ font:font({bold:true,sz:22}),  fill:fill(C.blue),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_VAL_GOLD:{ font:font({bold:true,sz:22}),  fill:fill(C.gold),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_VAL_GRN: { font:font({bold:true,sz:22}),  fill:fill(C.green),  alignment:{horizontal:'center',vertical:'center'} },
+    KPI_VAL_RED: { font:font({bold:true,sz:22}),  fill:fill(C.red),    alignment:{horizontal:'center',vertical:'center'} },
+    KPI_VAL_AMB: { font:font({bold:true,sz:22}),  fill:fill(C.amber),  alignment:{horizontal:'center',vertical:'center'} },
+    KPI_SUB_NAVY:{ font:font({sz:8}),             fill:fill(C.navy),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_SUB_BLUE:{ font:font({sz:8}),             fill:fill(C.blue),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_SUB_GOLD:{ font:font({sz:8}),             fill:fill(C.gold),   alignment:{horizontal:'center',vertical:'center'} },
+    KPI_SUB_GRN: { font:font({sz:8}),             fill:fill(C.green),  alignment:{horizontal:'center',vertical:'center'} },
+    KPI_SUB_RED: { font:font({sz:8}),             fill:fill(C.red),    alignment:{horizontal:'center',vertical:'center'} },
+    KPI_SUB_AMB: { font:font({sz:8}),             fill:fill(C.amber),  alignment:{horizontal:'center',vertical:'center'} },
+    SEC_NAVY: { font:font({bold:true,sz:10}),     fill:fill(C.navy),   alignment:{horizontal:'left',vertical:'center'} },
+    SEC_RED:  { font:font({bold:true,sz:10}),     fill:fill(C.red),    alignment:{horizontal:'left',vertical:'center'} },
+    COL_HDR:  { font:font({bold:true,sz:10,color:{rgb:C.navy_text}}), fill:fill(C.bg_col_hdr), alignment:{horizontal:'center',vertical:'center'}, border:{top:{style:'thin'},bottom:{style:'thin'},left:{style:'thin'},right:{style:'thin'}} },
+    COL_HDR_L:{ font:font({bold:true,sz:10,color:{rgb:C.navy_text}}), fill:fill(C.bg_col_hdr), alignment:{horizontal:'left',vertical:'center'},   border:{top:{style:'thin'},bottom:{style:'thin'},left:{style:'thin'},right:{style:'thin'}} },
+    COL_HDR_W:{ font:font({bold:true,sz:10}),    fill:fill(C.navy),   alignment:{horizontal:'center',vertical:'center'} },
+    COL_HDR_WL:{ font:font({bold:true,sz:10}),   fill:fill(C.navy),   alignment:{horizontal:'left',vertical:'center'} },
+    DATA:     { font:font({sz:10,color:{rgb:C.navy_text}}), fill:fill(C.bg_light), alignment:{horizontal:'center',vertical:'center'} },
+    DATA_L:   { font:font({sz:10,color:{rgb:C.navy_text}}), fill:fill(C.bg_light), alignment:{horizontal:'left',vertical:'center'} },
+    DATA_ALT: { font:font({sz:10,color:{rgb:C.navy_text}}), fill:fill(C.white),    alignment:{horizontal:'center',vertical:'center'} },
+    DATA_ALT_L:{ font:font({sz:10,color:{rgb:C.navy_text}}), fill:fill(C.white),   alignment:{horizontal:'left',vertical:'center'} },
+    DATA_OK:  { font:font({sz:10,color:{rgb:C.navy_text}}), fill:fill(C.bg_ok_light), alignment:{horizontal:'center',vertical:'center'} },
+    DATA_REV_EXEC:{ font:font({bold:true,sz:9,color:{rgb:C.gold}}), fill:fill(C.bg_amber_light), alignment:{horizontal:'center',vertical:'center'} },
+    DATA_REV_SHEET:{ font:font({bold:true,sz:9,color:{rgb:C.red}}), fill:fill(C.bg_rev), alignment:{horizontal:'center',vertical:'center'} },
+    DATA_MANT:{ font:font({bold:true,sz:9,color:{rgb:C.gold}}), fill:fill(C.bg_amber_light), alignment:{horizontal:'center',vertical:'center'} },
+    TOTAL:    { font:font({bold:true,sz:10}),     fill:fill(C.navy),   alignment:{horizontal:'center',vertical:'center'} },
+    TOTAL_L:  { font:font({bold:true,sz:10}),     fill:fill(C.navy),   alignment:{horizontal:'left',vertical:'center'} },
+    AL_HDR:   { font:font({bold:true,sz:10,color:{rgb:C.red}}), fill:fill(C.bg_rev), alignment:{horizontal:'center',vertical:'center'} },
+    AL_DATA:  { font:font({sz:9,color:{rgb:C.navy_text}}), fill:fill(C.bg_amber_light), alignment:{horizontal:'center',vertical:'center'} },
+    AL_DATA_L:{ font:font({sz:9,color:{rgb:C.navy_text}}), fill:fill(C.bg_amber_light), alignment:{horizontal:'left',vertical:'center'} },
+    AL_ALT:   { font:font({sz:9,color:{rgb:C.navy_text}}), fill:fill(C.white), alignment:{horizontal:'center',vertical:'center'} },
+    AL_ALT_L: { font:font({sz:9,color:{rgb:C.navy_text}}), fill:fill(C.white), alignment:{horizontal:'left',vertical:'center'} },
+    AL_ESTADO:{ font:font({bold:true,sz:9,color:{rgb:C.gold}}), fill:fill(C.bg_amber_light), alignment:{horizontal:'center',vertical:'center'} },
+    AL_ESTADO2:{ font:font({bold:true,sz:9,color:{rgb:C.gold}}), fill:fill(C.white), alignment:{horizontal:'center',vertical:'center'} },
+    OBS:      { font:font({sz:10,color:{rgb:C.navy_text}}), fill:fill(C.bg_light), alignment:{horizontal:'left',vertical:'center',wrapText:true} },
+    OBS_ALT:  { font:font({sz:10,color:{rgb:C.navy_text}}), fill:fill(C.white),    alignment:{horizontal:'left',vertical:'center',wrapText:true} },
+    FOOTER:   { font:font({sz:9,color:{rgb:C.footer_text}}), fill:fill(C.bg_info), alignment:{horizontal:'center',vertical:'center'} },
+  };
+
+  // ── Función para aplicar estilo a un objeto celda SheetJS ─────
+  function sc(v, s, t){
+    // t: cell type override ('s'=string, 'n'=number)
+    const n=Number(v);
+    const isNum=!isNaN(n)&&v!==''&&v!==null&&v!==undefined&&v!=='—'&&typeof v!=='boolean';
+    const cell={ v:v, s:s };
+    if(t) cell.t=t;
+    else if(isNum) { cell.v=n; cell.t='n'; }
+    else cell.t='s';
+    return cell;
+  }
+
+  // ── Escribir celdas en worksheet SheetJS ──────────────────────
+  function wsSet(ws, row, col, cell){
+    const addr=XLSX.utils.encode_cell({r:row,c:col});
+    if(cell===null||cell===undefined) return;
+    ws[addr]=cell;
+  }
+
+  function wsRange(ws, r1,c1,r2,c2){
+    if(!ws['!ref']){ws['!ref']=XLSX.utils.encode_range({s:{r:r1,c:c1},e:{r:r2,c:c2}});}
+    else{
+      const cur=XLSX.utils.decode_range(ws['!ref']);
+      ws['!ref']=XLSX.utils.encode_range({
+        s:{r:Math.min(cur.s.r,r1),c:Math.min(cur.s.c,c1)},
+        e:{r:Math.max(cur.e.r,r2),c:Math.max(cur.e.c,c2)}
+      });
+    }
+  }
+
+  // ── HOJA 1: RESUMEN EJECUTIVO ─────────────────────────────────
+  function buildExecutive(){
+    let gtotal=0,gmant=0,gok=0,grev=0,gobs=0,gtested=0;
+    let ptotal=0,pmant=0,pok=0,prev=0,pobs=0,ptested=0;
+    const typeStats=[];
+    const prevW = w > 1 ? w - 1 : null;
+
+    for(const t of types){
+      const equips=t.sections.flatMap(s=>s.equips);
+      let tot=equips.length,mant=0,ok=0,rev=0,obs=0;
+      let p_tot=equips.length,p_mant=0,p_ok=0,p_rev=0,p_obs=0;
+
+      for(const eq of equips){
+        const en=loadEntry(w,eq.id);
+        if(en.stat_mant) mant++;
+        if(en.stat_ok)   ok++;
+        if(en.stat_rev)  rev++;
+        if(en.obs&&en.obs.trim()) obs++;
+
+        if(prevW){
+          const pen=loadEntry(prevW,eq.id);
+          if(pen.stat_mant) p_mant++;
+          if(pen.stat_ok)   p_ok++;
+          if(pen.stat_rev)  p_rev++;
+          if(pen.obs&&pen.obs.trim()) p_obs++;
+        }
+      }
+      typeStats.push({
+        name:t.name,tot,mant,ok,rev,obs,
+        p_mant,p_ok,p_rev,p_obs
+      });
+      gtotal+=tot; gmant+=mant; gok+=ok; grev+=rev; gobs+=obs; gtested+=(ok+rev);
+      pmant+=p_mant; pok+=p_ok; prev+=p_rev; pobs+=p_obs; ptested+=(p_ok+p_rev);
+    }
+
+    const ws={};
+    ws['!merges']=[];
+    const merges=ws['!merges'];
+    let r=0; // 0-indexed row
+
+    // Row 0: spacer (height 8)
+    r=1; // Row 2 in Excel = index 1
+
+    // Row 1 (idx 1): Title — B2:H2 merged
+    wsSet(ws,r,1, sc('GRUPO CASSA — INGENIO CHAPARRASTIQUE', S.TITLE,'s'));
+    for(let c=2;c<=7;c++) wsSet(ws,r,c,sc('', S.TITLE,'s'));
+    merges.push({s:{r,c:1},e:{r,c:7}});
+    r++;
+
+    // Row 2 (idx 2): Subtitle — B3:H3
+    wsSet(ws,r,1, sc('PROGRAMA DE PRUEBAS DE EQUIPOS  ·  '+semLabel, S.SUBTITLE,'s'));
+    for(let c=2;c<=7;c++) wsSet(ws,r,c,sc('', S.SUBTITLE,'s'));
+    merges.push({s:{r,c:1},e:{r,c:7}});
+    r++;
+
+    // Row 3 (idx 3): Info — B4:H4
+    const infoTxt='Responsable: '+(cfg.responsable||'Marcos')+'  ·  Generado: '+today+'  ·  Dirección Industrial';
+    wsSet(ws,r,1, sc(infoTxt, S.INFO,'s'));
+    for(let c=2;c<=7;c++) wsSet(ws,r,c,sc('', S.INFO,'s'));
+    merges.push({s:{r,c:1},e:{r,c:7}});
+    r++;
+
+    // Row 4 (idx 4): spacer
+    r++;
+
+    // Row 5 (idx 5): KPI labels — B6:G6
+    const pct=v=>gtotal>0?Math.round(v/gtotal*100)+'%':'0%';
+    const kpiDefs=[
+      {lbl:'TOTAL EQUIPOS', val:String(gtotal), sub:'Inventario completo',  sl:S.KPI_NAVY, sv:S.KPI_VAL_NAVY, ss:S.KPI_SUB_NAVY},
+      {lbl:'PROBADOS',      val:String(gtested),sub:pct(gtested)+' del total', sl:S.KPI_BLUE, sv:S.KPI_VAL_BLUE, ss:S.KPI_SUB_BLUE},
+      {lbl:'EN MANTENIMIENTO',val:String(gmant),sub:'Intervenidos',         sl:S.KPI_GOLD, sv:S.KPI_VAL_GOLD, ss:S.KPI_SUB_GOLD},
+      {lbl:'BUENAS COND.',  val:String(gok),    sub:pct(gok)+' aptos',     sl:S.KPI_GREEN,sv:S.KPI_VAL_GRN,  ss:S.KPI_SUB_GRN},
+      {lbl:'REQUIEREN REVISIÓN',val:String(grev),sub:'Atención requerida',  sl:S.KPI_RED,  sv:S.KPI_VAL_RED,  ss:S.KPI_SUB_RED},
+      {lbl:'OBSERVACIONES', val:String(gobs),   sub:'Con anotaciones',     sl:S.KPI_AMB,  sv:S.KPI_VAL_AMB,  ss:S.KPI_SUB_AMB},
+    ];
+    kpiDefs.forEach((k,i)=>wsSet(ws,r,1+i, sc(k.lbl,k.sl,'s')));
+    r++;
+
+    // Row 6 (idx 6): KPI values
+    kpiDefs.forEach((k,i)=>wsSet(ws,r,1+i, sc(k.val,k.sv,'s')));
+    r++;
+
+    // Row 7 (idx 7): KPI subs
+    kpiDefs.forEach((k,i)=>wsSet(ws,r,1+i, sc(k.sub,k.ss,'s')));
+    r++;
+
+    // Row 8 (idx 8): spacer
+    r++;
+
+    // Row 9 (idx 9): Section header — B10:H10
+    wsSet(ws,r,1, sc('   RESUMEN POR TIPO DE EQUIPO',S.SEC_NAVY,'s'));
+    for(let c=2;c<=7;c++) wsSet(ws,r,c,{v:'',s:S.SEC_NAVY,t:'s'});
+    merges.push({s:{r,c:1},e:{r,c:7}});
+    r++;
+
+    // Row 10 (idx 10): Column headers
+    const tblHdrs=['Tipo de Equipo','Total','Probados','Mantenimiento','OK','Rev. Requerida','Observaciones','Diferencia (vs S-1)'];
+    wsSet(ws,r,1, sc(tblHdrs[0],S.COL_HDR_L,'s'));
+    for(let i=1;i<tblHdrs.length;i++) wsSet(ws,r,1+i, sc(tblHdrs[i],S.COL_HDR,'s'));
+    r++;
+
+    // Data rows per type
+    typeStats.forEach((ts,i)=>{
+      const alt=i%2===1;
+      const sdL=alt?S.DATA_ALT_L:S.DATA_L;
+      const sd=alt?S.DATA_ALT:S.DATA;
+      const tested=ts.ok+ts.rev;
+      const p_tested=ts.p_ok+ts.p_rev;
+      const diff = prevW ? (tested - p_tested) : 0;
+      const diffTxt = prevW ? (diff > 0 ? '+'+diff : diff) : '—';
+      
+      let diffStyle = sd;
+      if(prevW){
+        if(diff > 0) diffStyle = S.DATA_OK;
+        else if(diff < 0) diffStyle = S.DATA_REV_SHEET;
+      }
+
+      const sdRev=ts.rev>0?S.DATA_REV_EXEC:sd;
+      wsSet(ws,r,1, sc(ts.name,sdL,'s'));
+      wsSet(ws,r,2, sc(ts.tot,sd,'n'));
+      wsSet(ws,r,3, sc(tested,sd,'n'));
+      wsSet(ws,r,4, sc(ts.mant,sd,'n'));
+      wsSet(ws,r,5, sc(ts.ok,sd,'n'));
+      wsSet(ws,r,6, sc(ts.rev,sdRev,'n'));
+      wsSet(ws,r,7, sc(ts.obs,sd,'n'));
+      wsSet(ws,r,8, sc(diffTxt,diffStyle,'s'));
+      r++;
+    });
+
+    // Totals row
+    const totalDiff = prevW ? (gtested - ptested) : 0;
+    const totalDiffTxt = prevW ? (totalDiff > 0 ? '+'+totalDiff : totalDiff) : '—';
+    wsSet(ws,r,1, sc('TOTAL GENERAL',S.TOTAL_L,'s'));
+    wsSet(ws,r,2, sc(gtotal,S.TOTAL,'n'));
+    wsSet(ws,r,3, sc(gtested,S.TOTAL,'n'));
+    wsSet(ws,r,4, sc(gmant,S.TOTAL,'n'));
+    wsSet(ws,r,5, sc(gok,S.TOTAL,'n'));
+    wsSet(ws,r,6, sc(grev,S.TOTAL,'n'));
+    wsSet(ws,r,7, sc(gobs,S.TOTAL,'n'));
+    wsSet(ws,r,8, sc(totalDiffTxt,S.TOTAL,'s'));
+    r++;
+
+    // Spacer
+    r++;
+
+    // Alert section header — B:I
+    wsSet(ws,r,1, sc('   EQUIPOS QUE REQUIEREN REVISIÓN / ATENCIÓN INMEDIATA',S.SEC_RED,'s'));
+    for(let c=2;c<=8;c++) wsSet(ws,r,c,sc('',S.SEC_RED,'s'));
+    merges.push({s:{r,c:1},e:{r,c:8}});
+    r++;
+
+    // Alert col headers
+    const alHdrs=['Equipo','Tipo','Estado','Técnico','Observación','','',''];
+    wsSet(ws,r,1, sc(alHdrs[0],S.AL_HDR,'s'));
+    wsSet(ws,r,2, sc(alHdrs[1],S.AL_HDR,'s'));
+    wsSet(ws,r,3, sc(alHdrs[2],S.AL_HDR,'s'));
+    wsSet(ws,r,4, sc(alHdrs[3],S.AL_HDR,'s'));
+    wsSet(ws,r,5, sc(alHdrs[4],S.AL_HDR,'s'));
+    wsSet(ws,r,6, sc('',S.AL_HDR,'s'));
+    wsSet(ws,r,7, sc('',S.AL_HDR,'s'));
+    wsSet(ws,r,8, sc('',S.AL_HDR,'s'));
+    r++;
+
+    let ai=0;
+    for(const t of types){
+      for(const sec of t.sections){
+        for(const eq of sec.equips){
+          const en=loadEntry(w,eq.id);
+          if(!en.stat_rev) continue;
+          const alt=ai%2===1;
+          const sdL=alt?S.AL_ALT_L:S.AL_DATA_L;
+          const sd=alt?S.AL_ALT:S.AL_DATA;
+          const sdE=alt?S.AL_ESTADO2:S.AL_ESTADO;
+          let estadoTxt='⚠ Revisión';
+          if(en.stat_mant) estadoTxt='🔧 Mantto  ⚠ Revisión';
+          wsSet(ws,r,1, sc(eq.name,sdL,'s'));
+          wsSet(ws,r,2, sc(t.name,sd,'s'));
+          wsSet(ws,r,3, sc(estadoTxt,sdE,'s'));
+          wsSet(ws,r,4, sc(en.tec_mec||'—',sd,'s'));
+          wsSet(ws,r,5, sc(en.obs||'',sd,'s'));
+          wsSet(ws,r,6, sc('',sd,'s'));
+          wsSet(ws,r,7, sc('',sd,'s'));
+          wsSet(ws,r,8, sc('',sd,'s'));
+          r++; ai++;
+        }
+      }
+    }
+
+    // Spacer
+    r++;
+
+    // Footer — B:I merged
+    const footerTxt='Grupo CASSA · Ingenio Chaparrastique · Dirección Industrial · Documento Confidencial';
+    wsSet(ws,r,1, sc(footerTxt,S.FOOTER,'s'));
+    for(let c=2;c<=8;c++) wsSet(ws,r,c,sc('',S.FOOTER,'s'));
+    merges.push({s:{r,c:1},e:{r,c:8}});
+
+    wsRange(ws,0,0,r,8);
+    ws['!cols']=[{wch:3},{wch:22},{wch:12},{wch:12},{wch:12},{wch:12},{wch:12},{wch:40},{wch:18}];
+    ws['!rows']=[{hpt:8},{hpt:38},{hpt:26},{hpt:26},{hpt:10},{hpt:16},{hpt:20},{hpt:16},{hpt:10}];
+    return ws;
+  }
+
+  // ── HOJA HISTÓRICO ACUMULADO ───────────────────────────────────
+  function buildHistorySheet(){
+    const cfg = getCfg();
+    const totalW = cfg.totalWeeks || 12;
+    const allEquips = getAllEquips();
+    const ws = {};
+    ws['!merges'] = [];
+    const merges = ws['!merges'];
+    let r = 0;
+
+    // Title
+    wsSet(ws, r, 1, sc('HISTÓRICO ACUMULADO DE PRUEBAS — TENDENCIAS POR SEMANA', S.TITLE, 's'));
+    for (let c = 2; c <= (totalW + 3); c++) wsSet(ws, r, c, sc('', S.TITLE, 's'));
+    merges.push({ s: { r, c: 1 }, e: { r, c: (totalW + 3) } });
+    r++;
+
+    // Subtitle
+    wsSet(ws, r, 1, sc('Seguimiento de valores técnicos por equipo y semana', S.SUBTITLE, 's'));
+    for (let c = 2; c <= (totalW + 3); c++) wsSet(ws, r, c, sc('', S.SUBTITLE, 's'));
+    merges.push({ s: { r, c: 1 }, e: { r, c: (totalW + 3) } });
+    r++;
+    r++; // spacer
+
+    // Headers
+    wsSet(ws, r, 1, sc('Equipo', S.COL_HDR_WL, 's'));
+    wsSet(ws, r, 2, sc('Tipo', S.COL_HDR_W, 's'));
+    wsSet(ws, r, 3, sc('Parámetro', S.COL_HDR_W, 's'));
+    for (let i = 1; i <= totalW; i++) {
+      wsSet(ws, r, 3 + i, sc('Sem ' + i, S.COL_HDR_W, 's'));
+    }
+    r++;
+
+    allEquips.forEach((eq, idx) => {
+      const params = eq.params || [];
+      const alt = idx % 2 === 1;
+      const sdL = alt ? S.DATA_ALT_L : S.DATA_L;
+      const sd = alt ? S.DATA_ALT : S.DATA;
+
+      params.forEach((p, pIdx) => {
+        wsSet(ws, r, 1, sc(eq.name, sdL, 's'));
+        wsSet(ws, r, 2, sc(eq.typeName, sd, 's'));
+        wsSet(ws, r, 3, sc(p.name, sd, 's'));
+
+        for (let wIdx = 1; wIdx <= totalW; wIdx++) {
+          const en = loadEntry(wIdx, eq.id);
+          const val = en[p.key];
+          let cellVal = '—';
+          let cellStyle = sd;
+
+          if (val !== undefined && val !== null && val !== '') {
+            cellVal = fv(val, p.type);
+            if (p.type === 'num') {
+              const n = parseFloat(val);
+              if (p.max && n > p.max) cellStyle = S.DATA_REV_SHEET;
+              else if (p.warn && n > p.warn) cellStyle = S.DATA_MANT;
+              else cellStyle = S.DATA_OK;
+            } else if (p.type === 'ac' && val === 'ok') {
+              cellStyle = S.DATA_OK;
+            } else if (p.type === 'ac' && val === 'mal') {
+              cellStyle = S.DATA_REV_SHEET;
+            }
+          }
+          wsSet(ws, r, 3 + wIdx, sc(cellVal, cellStyle, 's'));
+        }
+        r++;
+      });
+      // Merge equipo and tipo cells for all its params
+      if (params.length > 1) {
+        merges.push({ s: { r: r - params.length, c: 1 }, e: { r: r - 1, c: 1 } });
+        merges.push({ s: { r: r - params.length, c: 2 }, e: { r: r - 1, c: 2 } });
+      }
+    });
+
+    wsRange(ws, 0, 0, r, totalW + 3);
+    ws['!cols'] = [{ wch: 3 }, { wch: 25 }, { wch: 20 }, { wch: 25 }, ...Array(totalW).fill({ wch: 12 })];
+    return ws;
+  }
+
+  // ── HOJAS POR TIPO ────────────────────────────────────────────
+  function buildTypeSheet(t){
+    const paramDefs=t.defaultParams;
+    const NC=2+paramDefs.length+4; // B(equipo) C(cod) D(estado) params... tec_mec tec_elec obs
+    const ws={};
+    ws['!merges']=[];
+    const merges=ws['!merges'];
+    let r=0;
+
+    // Row 0: spacer
+    r=1; // start at row idx 1 (Excel row 2)
+
+    // Title row — B:last col merged
+    const titleTxt='PRUEBA DE EQUIPOS: '+t.name.toUpperCase()+'  ·  '+semLabel;
+    wsSet(ws,r,1, sc(titleTxt,S.TITLE,'s'));
+    for(let c=2;c<=NC;c++) wsSet(ws,r,c,sc('', S.TITLE,'s'));
+    merges.push({s:{r,c:1},e:{r,c:NC}});
+    r++;
+
+    // Subtitle row
+    const subTxt='Grupo CASSA · Ingenio Chaparrastique  ·  Responsable: '+(cfg.responsable||'Marcos')+'  ·  Generado: '+today;
+    wsSet(ws,r,1, sc(subTxt,S.SUBTITLE,'s'));
+    for(let c=2;c<=NC;c++) wsSet(ws,r,c,sc('', S.SUBTITLE,'s'));
+    merges.push({s:{r,c:1},e:{r,c:NC}});
+    r++;
+
+    // Spacer row
+    r++;
+
+    // Column headers row
+    const hdrs=['Equipo','Código','Estado',...paramDefs.map(p=>p.name),'Téc. Mecánico','Téc. Eléctrico','Observaciones'];
+    wsSet(ws,r,1, sc(hdrs[0],S.COL_HDR_WL,'s'));
+    for(let i=1;i<hdrs.length;i++) wsSet(ws,r,1+i, sc(hdrs[i],S.COL_HDR_W,'s'));
+    r++;
+
+    // Data rows
+    let di=0;
+    for(const sec of t.sections){
+      sec.equips.forEach(eq=>{
+        const en=loadEntry(w,eq.id);
+        const alt=di%2===1;
+        const sdL=alt?S.DATA_ALT_L:S.DATA_L;
+        const sd=alt?S.DATA_ALT:S.DATA;
+        const obsS=alt?S.OBS_ALT:S.OBS;
+
+        // Estado cell
+        let estadoTxt='—', estadoS=sd;
+        if(en.stat_rev && en.stat_mant){ estadoTxt='🔧 Mantto  ⚠ Revisión'; estadoS=S.DATA_MANT; }
+        else if(en.stat_rev)            { estadoTxt='⚠ Revisión';             estadoS=S.DATA_REV_SHEET; }
+        else if(en.stat_mant)           { estadoTxt='🔧 Mantto';               estadoS=S.DATA_MANT; }
+        else if(en.stat_ok)             { estadoTxt='✅ OK';                    estadoS=S.DATA_OK; }
+
+        wsSet(ws,r,1, sc(eq.name,sdL,'s'));
+        wsSet(ws,r,2, sc(eq.code||'—',sd,'s'));
+        wsSet(ws,r,3, sc(estadoTxt,estadoS,'s'));
+        const prevW = w > 1 ? w - 1 : null;
+        const pen = prevW ? loadEntry(prevW, eq.id) : null;
+
+        paramDefs.forEach((p,pi)=>{
+          const v=fv(en[p.key],p.type);
+          let cs=sd;
+          let trend = '';
+
+          if(p.type==='num' && en[p.key]!==undefined && en[p.key]!==''){
+            const n2=parseFloat(en[p.key]);
+            if(p.max && !isNaN(n2) && n2>p.max) cs=S.DATA_REV_SHEET;
+            else if(p.warn && !isNaN(n2) && n2>p.warn) cs=S.DATA_MANT;
+
+            // Tendencia
+            if(pen && pen[p.key]!==undefined && pen[p.key]!==''){
+              const nPrev = parseFloat(pen[p.key]);
+              if(!isNaN(nPrev)){
+                if(n2 > nPrev) trend = ' ↗';
+                else if(n2 < nPrev) trend = ' ↘';
+                else trend = ' =';
+              }
+            }
+          } else if(p.type==='ac'){
+            if(en[p.key]==='ok') cs=S.DATA_OK;
+            else if(en[p.key]==='mal') cs=S.DATA_REV_SHEET;
+            
+            // Tendencia cualitativa
+            if(pen && pen[p.key]!==undefined && pen[p.key]!==''){
+              if(en[p.key] !== pen[p.key]) trend = ' ⇄';
+            }
+          }
+          
+          const isN=!isNaN(Number(v))&&v!=='—';
+          const finalVal = isN ? (Number(v) + trend) : (v + trend);
+          wsSet(ws,r,4+pi, sc(finalVal, cs, 's')); // Usamos 's' para incluir la flecha
+        });
+        wsSet(ws,r,4+paramDefs.length,   sc(en.tec_mec||'—',sd,'s'));
+        wsSet(ws,r,4+paramDefs.length+1, sc(en.tec_elec||'—',sd,'s'));
+        wsSet(ws,r,4+paramDefs.length+2, sc(en.obs||'',obsS,'s'));
+        r++; di++;
+      });
+    }
+
+    // Trend Legend
+    const legendTxt = 'Tendencia vs Semana Anterior: ↗ Sube | ↘ Baja | = Sin cambios | ⇄ Cambio de estado';
+    wsSet(ws,r,1, sc(legendTxt, S.INFO, 's'));
+    for(let c=2;c<=NC;c++) wsSet(ws,r,c,sc('', S.INFO, 's'));
+    merges.push({s:{r,c:1},e:{r,c:NC}});
+    r++;
+
+    // Footer
+    const fTxt='Grupo CASSA  ·  Ingenio Chaparrastique  ·  Documento Confidencial';
+    wsSet(ws,r,1, sc(fTxt,S.FOOTER,'s'));
+    for(let c=2;c<=NC;c++) wsSet(ws,r,c,sc('',S.FOOTER,'s'));
+    merges.push({s:{r,c:1},e:{r,c:NC}});
+
+    wsRange(ws,0,0,r,NC);
+    ws['!rows']=[{hpt:8},{hpt:34},{hpt:22},{hpt:10}];
+    // Col widths: spacer, equipo, codigo, estado, params..., tec_mec, tec_elec, obs
+    ws['!cols']=[{wch:3},{wch:26},{wch:12},{wch:24},...paramDefs.map(()=>({wch:13})),{wch:14},{wch:14},{wch:36}];
+    return ws;
+  }
+
+  setTimeout(()=>{
+    try{
+      if(typeof XLSX==='undefined') throw new Error('SheetJS no cargó. Verifica conexión a internet.');
+      const wb=XLSX.utils.book_new();
+      // SheetJS CE con estilos requiere write options: {cellStyles:true}
+      XLSX.utils.book_append_sheet(wb, buildExecutive(), 'Resumen Ejecutivo');
+      XLSX.utils.book_append_sheet(wb, buildHistorySheet(), 'Histórico Tendencias');
+      for(const t of types){
+        XLSX.utils.book_append_sheet(wb, buildTypeSheet(t), t.name.substring(0,31));
+      }
+      XLSX.writeFile(wb,'Reporte_Equipos_Semana'+w+'_CASSA.xlsx',{cellStyles:true});
+      hideLoading(); toast('✓ Excel descargado','ok');
+    }catch(e){ console.error(e); hideLoading(); toast('Error: '+e.message,'err'); }
+  },300);
+}
+
+// ═════════════════════════ IMPORT EXCEL ══════════════════════════
+function showImportExcel(){
+  const bg=document.createElement('div');
+  bg.className='modal-bg';
+  bg.innerHTML=`<div class="modal">
+    <div class="modal-title">Importar Equipos desde Excel</div>
+    <div class="modal-sub">El archivo debe tener columnas: <b>Codigo</b>, <b>Nombre</b>, <b>Tipo</b></div>
+    <div class="drop-zone" id="dz" onclick="document.getElementById('file-inp').click()"
+      ondragover="event.preventDefault();this.classList.add('drag')"
+      ondragleave="this.classList.remove('drag')"
+      ondrop="event.preventDefault();this.classList.remove('drag');handleImportFile(event.dataTransfer.files[0])">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <h3>Arrastra tu Excel aquí</h3>
+      <p>o toca para seleccionar el archivo</p>
+      <input type="file" id="file-inp" accept=".xlsx,.xls,.csv" style="display:none" onchange="handleImportFile(this.files[0])">
+    </div>
+    <div id="import-preview-area"></div>
+    <div style="height:14px"></div>
+    <div class="modal-row">
+      <button class="modal-cancel" onclick="this.closest('.modal-bg').remove()">Cancelar</button>
+      <button class="modal-ok" id="import-ok-btn" disabled style="opacity:.5" onclick="confirmImport()">
+        Importar equipos
+      </button>
+    </div>
+  </div>`;
+  document.body.appendChild(bg);
+  bg.addEventListener('click',e=>{ if(e.target===bg) bg.remove(); });
+}
+
+let _importRows=[];
+function handleImportFile(file){
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const data=new Uint8Array(e.target.result);
+      // Parse CSV or XLSX
+      let rows=[];
+      if(file.name.endsWith('.csv')){
+        const text=new TextDecoder().decode(data);
+        rows=text.split('\n').map(l=>l.split(',').map(c=>c.trim().replace(/^"|"$/g,'')));
+      } else {
+        // minimal xlsx reader: extract shared strings + sheet data
+        rows=parseXlsxSimple(data);
+      }
+      if(rows.length<2){toast('El archivo está vacío o no se pudo leer','err');return;}
+      // detect header row
+      const hdr=rows[0].map(h=>h.toLowerCase().trim());
+      const iCode=hdr.findIndex(h=>h.includes('cod')||h.includes('código'));
+      const iName=hdr.findIndex(h=>h.includes('nom'));
+      const iType=hdr.findIndex(h=>h.includes('tipo')||h.includes('type'));
+      if(iName===-1){toast('No se encontró columna "Nombre"','err');return;}
+      _importRows=rows.slice(1).filter(r=>r.join('').trim()).map(r=>({
+        code: iCode>=0?(r[iCode]||'').trim():'',
+        name: (r[iName]||'').trim(),
+        type: iType>=0?(r[iType]||'').trim():'Sin tipo',
+      })).filter(r=>r.name);
+      // show preview
+      const area=document.getElementById('import-preview-area');
+      const types=getTypes().map(t=>t.name);
+      area.innerHTML=`
+        <div style="font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px">${_importRows.length} equipos detectados:</div>
+        <div class="import-rows">
+          ${_importRows.slice(0,30).map(r=>`<div class="ir">
+            <span class="ir-code">${r.code||'—'}</span>
+            <span class="ir-name">${r.name}</span>
+            <span class="ir-type">${r.type}</span>
+          </div>`).join('')}
+          ${_importRows.length>30?`<div style="text-align:center;padding:6px;font-size:11px;color:var(--text3)">+${_importRows.length-30} más...</div>`:''}
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:var(--text2)">Tipos no reconocidos se crearán automáticamente.</div>
+      `;
+      const btn=document.getElementById('import-ok-btn');
+      if(btn){btn.disabled=false;btn.style.opacity='1';}
+    }catch(err){console.error(err);toast('Error al leer el archivo','err');}
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function parseXlsxSimple(data){
+  // Minimal xlsx text extraction: find xl/worksheets/sheet1.xml and xl/sharedStrings.xml in the ZIP
+  const txt=new TextDecoder('utf-8',{fatal:false}).decode(data);
+  // Extract shared strings
+  const ssMatch=txt.match(/<sst[^>]*>([\s\S]*?)<\/sst>/);
+  const ss=[];
+  if(ssMatch){
+    const siRe=/<si>[\s\S]*?<t[^>]*>([^<]*)<\/t>[\s\S]*?<\/si>/g;
+    let m;
+    while((m=siRe.exec(ssMatch[1]))!==null) ss.push(m[1].replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"')); 
+  }
+  // Extract first sheet
+  const sheetMatch=txt.match(/<sheetData>([\s\S]*?)<\/sheetData>/);
+  if(!sheetMatch) return [];
+  const rows=[];
+  const rowRe=/<row[^>]*>([\s\S]*?)<\/row>/g;
+  const cellRe=/<c[^>]*?(t="([^"]*)")?[^>]*>[\s\S]*?<v>([^<]*)<\/v>[\s\S]*?<\/c>/g;
+  let rm;
+  while((rm=rowRe.exec(sheetMatch[1]))!==null){
+    const cells=[]; let cm;
+    while((cm=cellRe.exec(rm[1]))!==null){
+      const t=cm[2], v=cm[3];
+      cells.push(t==='s'?(ss[parseInt(v)]||''):v||''  );
+    }
+    rows.push(cells);
+  }
+  return rows;
+}
+
+function confirmImport(){
+  if(!_importRows.length) return;
+  const types=getTypes();
+  let added=0;
+  for(const row of _importRows){
+    let t=types.find(x=>x.name.toLowerCase()===row.type.toLowerCase());
+    if(!t){
+      t={id:'t_'+uid(),name:row.type,color:'#6b7280',defaultParams:[
+        {key:'temp_motor',name:'Temperatura Motor',ref:'≤ 70',unit:'°C',type:'num',max:70,warn:65},
+        {key:'amp_motor',name:'Amperaje Motor',ref:'—',unit:'A',type:'num',max:null,warn:null},
+      ],sections:[{id:'s_'+uid(),name:'Importados',equips:[]}]};
+      types.push(t);
+    }
+    let sec=t.sections.find(s=>s.name==='Importados')||t.sections[0];
+    if(!sec){sec={id:'s_'+uid(),name:'Importados',equips:[]};t.sections.push(sec);}
+    const exists=t.sections.flatMap(s=>s.equips).some(e=>e.code===row.code&&e.name===row.name);
+    if(!exists){sec.equips.push({id:'e_'+uid(),code:row.code,name:row.name}); added++;}
+  }
+  saveTypes(types);
+  document.querySelector('.modal-bg')?.remove();
+  renderEditor();
+  toast(`✓ ${added} equipos importados`,'ok');
+  _importRows=[];
+}
+
+// ═════════════════════════ MODAL HELPERS ═════════════════════════
+function showModal(title, placeholder, defaultVal, okLabel, cb){
+  const bg=document.createElement('div');
+  bg.className='modal-bg';
+  bg.innerHTML=`<div class="modal">
+    <div class="modal-title">${title}</div>
+    <input class="modal-inp" id="modal-main-inp" placeholder="${placeholder}" value="${defaultVal}" autofocus>
+    <div class="modal-row">
+      <button class="modal-cancel" onclick="this.closest('.modal-bg').remove()">Cancelar</button>
+      <button class="modal-ok" id="modal-ok-btn">${okLabel}</button>
+    </div>
+  </div>`;
+  document.body.appendChild(bg);
+  document.getElementById('modal-main-inp').focus();
+  document.getElementById('modal-ok-btn').onclick=()=>{
+    cb(document.getElementById('modal-main-inp').value);
+    bg.remove();
+  };
+  bg.addEventListener('click',e=>{ if(e.target===bg) bg.remove(); });
+}
+
+function showModal2(title, fields, okLabel, cb){
+  const bg=document.createElement('div');
+  bg.className='modal-bg';
+  bg.innerHTML=`<div class="modal">
+    <div class="modal-title">${title}</div>
+    ${fields.map(f=>`
+      <div style="font-size:12px;color:var(--text2);margin-bottom:4px">${f.label}</div>
+      <input class="modal-inp" id="mf_${f.id}" placeholder="${f.placeholder}" value="${f.value||''}">
+    `).join('')}
+    <div class="modal-row">
+      <button class="modal-cancel" onclick="this.closest('.modal-bg').remove()">Cancelar</button>
+      <button class="modal-ok" id="modal-ok2">${okLabel}</button>
+    </div>
+  </div>`;
+  document.body.appendChild(bg);
+  fields[0]&&document.getElementById('mf_'+fields[0].id)?.focus();
+  document.getElementById('modal-ok2').onclick=()=>{
+    const vals={};
+    fields.forEach(f=>{ vals[f.id]=document.getElementById('mf_'+f.id)?.value||''; });
+    cb(vals); bg.remove();
+  };
+  bg.addEventListener('click',e=>{ if(e.target===bg) bg.remove(); });
+}
+
+// ═════════════════════════ UTILS ═════════════════════════════════
+function toast(msg,type=''){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='toast show'+(type?' '+type:'');
+  setTimeout(()=>t.className='toast',2600);
+}
+function showLoading(msg){
+  document.getElementById('ltxt').textContent=msg;
+  document.getElementById('loading').classList.add('show');
+}
+function hideLoading(){ document.getElementById('loading').classList.remove('show'); }
+
+// ─── Config inside editor ─────────────────────────────────────
+// Extra: show config card at bottom of editor
+const _origRenderEditor=renderEditor;
+// extend editor to show config at bottom
+function renderEditor(){
+  const types=getTypes();
+  const cfg=getCfg();
+  document.getElementById('si').innerHTML=`
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+      <button class="add-btn" style="width:100%;border-radius:10px;padding:12px" onclick="showAddType()">
+        + Nuevo tipo
+      </button>
+      <button class="add-btn" style="width:100%;border-radius:10px;padding:12px;background:#059669" onclick="showImportExcel()">
+        📥 Importar Excel
+      </button>
+    </div>
+    ${types.map(t=>`
+      <div class="edit-section">
+        <div class="edit-sec-hd" onclick="nav('edittype',{typeId:'${t.id}'})">
+          <div style="width:12px;height:12px;border-radius:50%;background:${t.color};flex-shrink:0"></div>
+          <div class="edit-sec-name">${t.name}</div>
+          <div class="edit-sec-cnt">${t.sections.flatMap(s=>s.equips).length} eq · ${t.sections.length} grupos</div>
+          <svg class="er-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    `).join('')}
+
+    <div class="sec-lbl" style="margin-top:20px">Configuración de temporada</div>
+    <div class="card">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+        <div>
+          <div style="font-size:12px;color:var(--text2);margin-bottom:5px">Semana actual</div>
+          <input class="ti" type="number" id="cfg-w" value="${cfg.currentWeek||1}" min="1" max="52">
+        </div>
+        <div>
+          <div style="font-size:12px;color:var(--text2);margin-bottom:5px">Total semanas</div>
+          <input class="ti" type="number" id="cfg-tw" value="${cfg.totalWeeks||12}" min="1" max="52">
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--text2);margin-bottom:5px">Fecha inicio temporada</div>
+      <input class="ti" type="date" id="cfg-sd" value="${cfg.startDate||''}" style="width:100%;margin-bottom:10px">
+      <div style="font-size:12px;color:var(--text2);margin-bottom:5px">Folder ID Google Drive</div>
+      <input class="ti" type="text" id="cfg-fid" value="${cfg.folderId||''}" placeholder="1BxiMVs0XRA..." style="width:100%;margin-bottom:4px">
+      <div style="font-size:11px;color:var(--text3);margin-bottom:10px">ID de la URL: drive.google.com/drive/folders/<b>ID</b></div>
+      <div style="font-size:12px;color:var(--text2);margin-bottom:5px">Google OAuth Client ID</div>
+      <input class="ti" type="text" id="cfg-gcid" value="${getDriveCfg().clientId||''}" placeholder="123456789-abc.apps.googleusercontent.com" style="width:100%;margin-bottom:4px">
+      <div style="font-size:11px;color:var(--text3);margin-bottom:10px">Obtén uno gratis en <b>console.cloud.google.com</b></div>
+      ${driveState.token
+        ? `<div style="display:flex;gap:8px;margin-bottom:10px">
+            <div style="flex:1;background:#d1fae5;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:600;color:#065f46">✓ Drive conectado</div>
+            <button onclick="driveLogout()" style="background:#fee2e2;border:none;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:600;color:#991b1b;cursor:pointer">Desconectar</button>
+           </div>`
+        : `<button onclick="saveCfgAndLogin()" style="width:100%;background:#4285f4;color:#fff;border:none;border-radius:10px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:10px;font-family:'DM Sans',sans-serif">
+            🔑 Conectar con Google Drive
+           </button>`}
+      <button class="savebtn" style="margin-top:0" onclick="saveCfg()">
+        <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
+        Guardar Configuración
+      </button>
+    </div>
+
+    <div class="card" style="margin-top:10px">
+      <div style="font-size:13px;font-weight:600;margin-bottom:6px">Instalar como app</div>
+      <button onclick="installApp()" style="width:100%;background:#1a2744;color:#fff;border:none;border-radius:10px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:10px;font-family:'DM Sans',sans-serif">
+        📲 Instalar en este dispositivo
+      </button>
+      <div style="font-size:11px;color:var(--text2);line-height:1.7">
+        <b>Android (Chrome):</b> Toca el botón de arriba o menú ⋮ → Agregar a inicio<br>
+        <b>iOS (Safari):</b> Compartir ↑ → Agregar a pantalla de inicio<br>
+        <b>PC (Chrome/Edge):</b> Ícono de instalar en la barra de dirección
+      </div>
+    </div>
+    <div style="text-align:center;padding:16px 0 4px;font-size:11px;color:var(--text3)">Pruebas de Equipos v2.0 · Grupo CASSA</div>
+    <div style="height:20px"></div>
+  `;
+}
+
+function saveCfg(){
+  DB.set('cfg',{
+    currentWeek:parseInt(document.getElementById('cfg-w')?.value)||1,
+    totalWeeks:parseInt(document.getElementById('cfg-tw')?.value)||12,
+    startDate:document.getElementById('cfg-sd')?.value||'',
+    folderId:document.getElementById('cfg-fid')?.value||'',
+  });
+  const gcid = document.getElementById('cfg-gcid')?.value||'';
+  if(gcid) DB.set('drive_cfg',{clientId:gcid});
+  toast('✓ Configuración guardada','ok');
+}
+
+function saveCfgAndLogin(){
+  saveCfg();
+  driveLogin();
+}
+
+// ─── EDITOR ACTIONS ───────────────────────────────────────────
+function showAddType(){
+  showModal2('Nuevo Tipo de Equipo', [
+    {id:'name', label:'Nombre del tipo', placeholder:'Ej: Compresores'},
+    {id:'color', label:'Color (HEX)', placeholder:'#3b82f6', value:'#3b82f6'}
+  ], 'Crear Tipo', vals=>{
+    if(!vals.name) return;
+    const types=getTypes();
+    types.push({
+      id:'t_'+uid(), name:vals.name, color:vals.color||'#6b7280',
+      defaultParams:[
+        {key:'temp', name:'Temperatura', unit:'°C', type:'num', max:70, warn:65},
+        {key:'amp', name:'Amperaje', unit:'A', type:'num'}
+      ],
+      sections:[]
+    });
+    saveTypes(types); renderEditor(); toast('✓ Tipo creado','ok');
+  });
+}
+
+let _editTypeId=null;
+function renderEditType(id){
+  _editTypeId=id;
+  const t=getTypes().find(x=>x.id===id);
+  if(!t) return nav('editor');
+  document.getElementById('si').innerHTML=`
+    <div class="card" style="margin-bottom:12px;border-left:4px solid ${t.color}">
+      <div style="font-size:11px;color:var(--text3);text-transform:uppercase;font-weight:700">Configuración de Tipo</div>
+      <div style="font-size:18px;font-weight:700;margin:2px 0 8px">${t.name}</div>
+      <div style="display:flex;gap:8px">
+        <button class="ac-btn" onclick="renameType('${t.id}')">Renombrar</button>
+        <button class="ac-btn" style="color:var(--danger)" onclick="deleteType('${t.id}')">Eliminar Tipo</button>
+      </div>
+    </div>
+    
+    <div class="sec-lbl">Grupos / Secciones</div>
+    ${t.sections.map(s=>`
+      <div class="er" onclick="nav('editsection',{typeId:'${t.id}', sectionId:'${s.id}'})">
+        <div class="er-info">
+          <div class="er-name">${s.name}</div>
+          <div class="er-sub">${s.equips.length} equipos</div>
+        </div>
+        <svg class="er-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+    `).join('')}
+    <button class="savebtn" style="background:var(--ok);margin-bottom:20px" onclick="showAddSection('${t.id}')">+ Nuevo Grupo</button>
+
+    <div class="sec-lbl">Parámetros por defecto</div>
+    <div class="card">
+      ${t.defaultParams.map((p,i)=>`
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border)">
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600">${p.name}</div>
+            <div style="font-size:11px;color:var(--text3)">${p.unit} · ${p.type==='num'?'Numérico':'A/C'}</div>
+          </div>
+          <button style="border:none;background:none;color:var(--danger);font-size:18px" onclick="deleteParam('${t.id}',${i})">×</button>
+        </div>
+      `).join('')}
+      <button class="ac-btn" style="width:100%;margin-top:10px" onclick="showAddParam('${t.id}')">+ Agregar Parámetro</button>
+    </div>
+    <div style="height:30px"></div>
+  `;
+}
+
+function deleteType(id){
+  if(!confirm('¿Eliminar este tipo y todos sus equipos?')) return;
+  const types=getTypes().filter(x=>x.id!==id);
+  saveTypes(types); nav('editor');
+}
+
+function renameType(id){
+  const types=getTypes();
+  const t=types.find(x=>x.id===id);
+  showModal('Renombrar Tipo', 'Nombre', t.name, 'Guardar', val=>{
+    if(!val) return;
+    t.name=val; saveTypes(types); renderEditType(id);
+  });
+}
+
+function showAddSection(typeId){
+  showModal('Nuevo Grupo', 'Nombre del grupo', '', 'Crear', val=>{
+    if(!val) return;
+    const types=getTypes();
+    const t=types.find(x=>x.id===typeId);
+    t.sections.push({id:'s_'+uid(), name:val, equips:[]});
+    saveTypes(types); renderEditType(typeId);
+  });
+}
+
+let _editSectionId=null;
+function renderEditSection(tid, sid){
+  _editTypeId=tid; _editSectionId=sid;
+  const t=getTypes().find(x=>x.id===tid);
+  const s=t.sections.find(x=>x.id===sid);
+  document.getElementById('si').innerHTML=`
+    <div class="card" style="margin-bottom:12px">
+      <div style="font-size:11px;color:var(--text3)">GRUPO EN ${t.name.toUpperCase()}</div>
+      <div style="font-size:18px;font-weight:700;margin:2px 0 8px">${s.name}</div>
+      <div style="display:flex;gap:8px">
+        <button class="ac-btn" onclick="renameSection('${tid}','${sid}')">Renombrar</button>
+        <button class="ac-btn" style="color:var(--danger)" onclick="deleteSection('${tid}','${sid}')">Eliminar Grupo</button>
+      </div>
+    </div>
+    
+    <div class="sec-lbl">Equipos en este grupo</div>
+    ${s.equips.map(eq=>`
+      <div class="er">
+        <div class="er-info">
+          <div class="er-name">${eq.name}</div>
+          <div class="er-sub">${eq.code||'Sin código'}</div>
+        </div>
+        <button style="border:none;background:none;color:var(--danger);padding:10px" onclick="deleteEquip('${tid}','${sid}','${eq.id}')">Eliminar</button>
+      </div>
+    `).join('')}
+    <button class="savebtn" style="background:var(--ok)" onclick="showAddEquip('${tid}','${sid}')">+ Nuevo Equipo</button>
+    <div style="height:30px"></div>
+  `;
+}
+
+function deleteSection(tid, sid){
+  if(!confirm('¿Eliminar este grupo y sus equipos?')) return;
+  const types=getTypes();
+  const t=types.find(x=>x.id===tid);
+  t.sections=t.sections.filter(x=>x.id!==sid);
+  saveTypes(types); nav('edittype',{typeId:tid});
+}
+
+function renameSection(tid, sid){
+  const types=getTypes();
+  const t=types.find(x=>x.id===tid);
+  const s=t.sections.find(x=>x.id===sid);
+  showModal('Renombrar Grupo', 'Nombre', s.name, 'Guardar', val=>{
+    if(!val) return;
+    s.name=val; saveTypes(types); renderEditSection(tid, sid);
+  });
+}
+
+function showAddEquip(tid, sid){
+  showModal2('Nuevo Equipo', [
+    {id:'name', label:'Nombre del equipo', placeholder:'Ej: Bomba #5'},
+    {id:'code', label:'Código / SAP', placeholder:'100xxxx'}
+  ], 'Agregar', vals=>{
+    if(!vals.name) return;
+    const types=getTypes();
+    const t=types.find(x=>x.id===tid);
+    const s=t.sections.find(x=>x.id===sid);
+    s.equips.push({id:'e_'+uid(), name:vals.name, code:vals.code});
+    saveTypes(types); renderEditSection(tid, sid);
+  });
+}
+
+function deleteEquip(tid, sid, eid){
+  if(!confirm('¿Eliminar este equipo?')) return;
+  const types=getTypes();
+  const t=types.find(x=>x.id===tid);
+  const s=t.sections.find(x=>x.id===sid);
+  s.equips=s.equips.filter(x=>x.id!==eid);
+  saveTypes(types); renderEditSection(tid, sid);
+}
+
+function showAddParam(tid){
+  showModal2('Nuevo Parámetro', [
+    {id:'name', label:'Nombre', placeholder:'Ej: Vibración'},
+    {id:'unit', label:'Unidad', placeholder:'Ej: mm/s'},
+    {id:'type', label:'Tipo (num o ac)', placeholder:'num', value:'num'},
+    {id:'max', label:'Límite Máximo (opcional)', placeholder:'70'},
+    {id:'warn', label:'Alerta Preventiva (opcional)', placeholder:'65'}
+  ], 'Agregar', vals=>{
+    if(!vals.name) return;
+    const types=getTypes();
+    const t=types.find(x=>x.id===tid);
+    t.defaultParams.push({
+      key: vals.name.toLowerCase().replace(/\s+/g,'_'),
+      name: vals.name,
+      unit: vals.unit,
+      type: vals.type==='ac'?'ac':'num',
+      max: vals.max?parseFloat(vals.max):null,
+      warn: vals.warn?parseFloat(vals.warn):null
+    });
+    saveTypes(types); renderEditType(tid);
+  });
+}
+
+function deleteParam(tid, idx){
+  if(!confirm('¿Eliminar este parámetro de este tipo de equipo?')) return;
+  const types=getTypes();
+  const t=types.find(x=>x.id===tid);
+  t.defaultParams.splice(idx, 1);
+  saveTypes(types); renderEditType(tid);
+}
+
+// ══════════════════════════════════════════════════════════════
+// GOOGLE DRIVE SYNC  — OAuth2 PKCE + Drive REST API v3
+// ══════════════════════════════════════════════════════════════
+const DRIVE_SCOPES = 'https://www.googleapis.com/auth/drive.file';
+const DRIVE_FILE_NAME = 'hibernacion_cassa_data.json';
+
+function getDriveCfg(){ return DB.get('drive_cfg',{clientId:'',fileId:''}); }
+function saveDriveCfg(obj){ DB.set('drive_cfg',Object.assign(getDriveCfg(),obj)); }
+
+const driveState = {
+  token: DB.get('drive_token', null),
+  lastSync: DB.get('drive_last_sync', null),
+};
+
+// ── Login (Implicit Token Flow — no client_secret needed) ─────
+function driveLogin(){
+  const cfg = getDriveCfg();
+  if(!cfg.clientId){ toast('⚠ Ingresa tu Client ID primero en Editor → Configuración','err'); nav('editor'); return; }
+  const redirectUri = 'https://markkusgoru.github.io/Hibernacion/';
+  const authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' +
+    'client_id=' + encodeURIComponent(cfg.clientId) +
+    '&redirect_uri=' + encodeURIComponent(redirectUri) +
+    '&response_type=token' +
+    '&scope=' + encodeURIComponent(DRIVE_SCOPES) +
+    '&prompt=consent';
+  location.href = authUrl;
+}
+
+// ── Handle OAuth2 redirect callback (Implicit Flow — token in hash) ──
+async function handleOAuthCallback(){
+  const hash = location.hash;
+  if(!hash) return false;
+  const params = new URLSearchParams(hash.substring(1));
+  const token = params.get('access_token');
+  if(!token) return false;
+  // Clean the URL
+  history.replaceState({}, document.title, location.pathname);
+  driveState.token = token;
+  DB.set('drive_token', token);
+  DB.del('pkce_verifier');
+  toast('✓ Google Drive conectado','ok');
+  return true;
+}
+
+// ── Refresh token (not available in implicit flow — re-login needed) ──
+async function driveRefreshToken(){
+  return false;
+}
+
+function driveLogout(){
+  driveState.token = null;
+  DB.del('drive_token');
+  saveDriveCfg({fileId:''});
+  toast('Desconectado de Drive','');
+  renderEditor();
+}
+
+// ── Ensure we have a valid token ──────────────────────────────
+async function ensureToken(){
+  if(driveState.token) return true;
+  toast('Sesión Drive expirada. Reconecta en Editor → Configuración.','err');
+  nav('editor');
+  return false;
+}
+
+// ── Collect ALL localStorage data into one JSON ───────────────
+function collectAllData(){
+  const snapshot = {};
+  for(let i=0; i<localStorage.length; i++){
+    const k = localStorage.key(i);
+    try{ snapshot[k] = JSON.parse(localStorage.getItem(k)); }
+    catch{ snapshot[k] = localStorage.getItem(k); }
+  }
+  snapshot['_exported_at'] = new Date().toISOString();
+  snapshot['_app_version'] = 'v5';
+  return snapshot;
+}
+
+// ── Restore ALL data from a JSON snapshot ─────────────────────
+function restoreAllData(snapshot){
+  const skip = ['drive_token','drive_refresh','pkce_verifier','oauth_redirect','drive_cfg'];
+  for(const [k,v] of Object.entries(snapshot)){
+    if(skip.includes(k)) continue;
+    try{ localStorage.setItem(k, JSON.stringify(v)); }
+    catch{ localStorage.setItem(k, String(v)); }
+  }
+}
+
+// ── Find existing file in Drive ───────────────────────────────
+async function driveFindFile(){
+  const cfg = getDriveCfg();
+  if(cfg.fileId){
+    // verify it still exists
+    try{
+      const r = await fetch(`https://www.googleapis.com/drive/v3/files/${cfg.fileId}?fields=id,name`,{
+        headers:{Authorization:'Bearer '+driveState.token}
+      });
+      if(r.ok) return cfg.fileId;
+    } catch{}
+  }
+  // search by name
+  const q = encodeURIComponent(`name='${DRIVE_FILE_NAME}' and trashed=false`);
+  const r = await fetch(`https://www.googleapis.com/drive/v3/files?q=${q}&fields=files(id,name)`,{
+    headers:{Authorization:'Bearer '+driveState.token}
+  });
+  const data = await r.json();
+  if(data.files && data.files.length>0){
+    saveDriveCfg({fileId: data.files[0].id});
+    return data.files[0].id;
+  }
+  return null;
+}
+
+// ── Upload (PUSH) data to Drive ───────────────────────────────
+async function drivePush(){
+  if(!(await ensureToken())) return;
+  const btn = document.getElementById('btn-drive-push-lbl');
+  if(btn) btn.textContent = '⏳ Subiendo...';
+  showLoading('Subiendo datos a Google Drive...');
+  try{
+    const cfg = getDriveCfg();
+    const payload = JSON.stringify(collectAllData(), null, 2);
+    const blob = new Blob([payload], {type:'application/json'});
+    let fileId = await driveFindFile();
+
+    let uploadResp;
+    if(fileId){
+      // Actualizar archivo existente
+      uploadResp = await fetch(
+        `https://www.googleapis.com/upload/drive/v3/files/${fileId}?uploadType=media`,{
+        method:'PATCH',
+        headers:{Authorization:'Bearer '+driveState.token,'Content-Type':'application/json'},
+        body: blob
+      });
+    } else {
+      // Crear archivo nuevo con metadatos + contenido en un solo request multipart
+      const meta = { name: DRIVE_FILE_NAME };
+      if(cfg.folderId) meta.parents = [cfg.folderId];
+      const boundary = 'hibernacion_boundary_xyz';
+      const delimiter = '--' + boundary;
+      const multipartBody = delimiter + '\r\n' +
+        'Content-Type: application/json\r\n\r\n' +
+        JSON.stringify(meta) + '\r\n' +
+        delimiter + '\r\n' +
+        'Content-Type: application/json\r\n\r\n' +
+        payload + '\r\n' +
+        delimiter + '--';
+      uploadResp = await fetch(
+        'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart',{
+        method:'POST',
+        headers:{
+          Authorization:'Bearer '+driveState.token,
+          'Content-Type':'multipart/related; boundary=' + boundary
+        },
+        body: multipartBody
+      });
+      if(uploadResp.ok){
+        const created = await uploadResp.clone().json();
+        if(created.id) saveDriveCfg({fileId: created.id});
+      }
+    }
+
+    if(!uploadResp.ok) throw new Error('Upload HTTP '+uploadResp.status);
+    const now = new Date().toLocaleString('es-SV');
+    driveState.lastSync = now;
+    DB.set('drive_last_sync', now);
+    hideLoading();
+    if(btn) btn.textContent = '↑ Drive';
+    toast('✓ Datos subidos a Drive','ok');
+    if(_screen==='home') renderHome();
+  } catch(e){
+    hideLoading();
+    if(btn) btn.textContent = '↑ Drive';
+    // Try refresh once
+    if(e.message.includes('401') || e.message.includes('403')){
+      driveState.token = null;
+      const ok = await driveRefreshToken();
+      if(ok){ drivePush(); return; }
+    }
+    toast('Error Drive: '+e.message,'err');
+  }
+}
+
+// ── Download (PULL) data from Drive ──────────────────────────
+async function drivePull(){
+  if(!(await ensureToken())) return;
+  showLoading('Descargando datos de Google Drive...');
+  try{
+    const fileId = await driveFindFile();
+    if(!fileId){ hideLoading(); toast('No se encontró archivo en Drive. Sube primero.','err'); return; }
+    const r = await fetch(`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`,{
+      headers:{Authorization:'Bearer '+driveState.token}
+    });
+    if(!r.ok) throw new Error('Download HTTP '+r.status);
+    const snapshot = await r.json();
+    if(!confirm(`¿Reemplazar datos locales con la versión de Drive?\n\nFecha en Drive: ${snapshot._exported_at||'desconocida'}\n\n⚠ Los datos locales no guardados se perderán.`)){
+      hideLoading(); return;
+    }
+    restoreAllData(snapshot);
+    const now = new Date().toLocaleString('es-SV');
+    driveState.lastSync = now;
+    DB.set('drive_last_sync', now);
+    hideLoading();
+    toast('✓ Datos cargados desde Drive','ok');
+    nav('home');
+  } catch(e){
+    hideLoading();
+    if(e.message.includes('401') || e.message.includes('403')){
+      driveState.token = null;
+      const ok = await driveRefreshToken();
+      if(ok){ drivePull(); return; }
+    }
+    toast('Error Drive: '+e.message,'err');
+  }
+}
+
+// ── Auto-push after every saveForm() call ─────────────────────
+const _origSaveForm = saveForm;
+function saveForm(){
+  _origSaveForm();
+  // Background push if token exists
+  if(driveState.token){
+    setTimeout(()=>{
+      drivePush().catch(()=>{});
+    }, 800);
+  }
+}
+
+// ── Handle OAuth callback on page load ───────────────────────
+async function initDrive(){
+  if(location.hash.includes('access_token=')){
+    const ok = await handleOAuthCallback();
+    if(ok) renderEditor();
+  }
+}
+
+// ── END DRIVE SYNC ════════════════════════════════════════════
+
+// ── INIT ──────────────────────────────────────────────────────
+function bootstrapData(){
+  if(localStorage.getItem('data_v4')) return;
+  localStorage.setItem('eq_types', JSON.stringify([{"id": "centrifugas_batch", "name": "Centrifugas Batch", "color": "#7c3aed", "defaultParams": [], "sections": []}, {"id": "centrifugas_continuas", "name": "Centrifugas Continuas", "color": "#1d4ed8", "defaultParams": [{"key": "temperatura_motor", "name": "Temperatura Motor", "unit": "\u00b0C", "type": "num"}, {"key": "amperaje_motor", "name": "Amperaje Motor", "unit": "A", "type": "ac"}, {"key": "velocidad_lampara", "name": "Velocidad L\u00e1mpara", "unit": "rpm", "type": "num"}, {"key": "valvula_aliment", "name": "V\u00e1lvula Aliment.", "unit": "estado", "type": "ac"}, {"key": "valvula_onoff", "name": "V\u00e1lvula On/Off", "unit": "estado", "type": "ac"}, {"key": "vibracion_motor", "name": "Vibraci\u00f3n motor", "unit": "mm/s", "type": "num"}, {"key": "vibracion_canasta", "name": "Vibraci\u00f3n canasta", "unit": "mm/s", "type": "num"}], "sections": [{"id": "s_1", "name": "CENTRIFUGAS DE TERCERA", "equips": [{"id": "CENTRIFUGATERCERA1", "code": "", "name": "Centrifuga Tercera #1"}, {"id": "CENTRIFUGATERCERA2", "code": "", "name": "Centrifuga Tercera #2"}, {"id": "CENTRIFUGATERCERA3", "code": "", "name": "Centrifuga Tercera #3"}]}, {"id": "s_2", "name": "CENTRIFUGAS DE SEGUNDA", "equips": [{"id": "CENTRIFUGASEGUNDA1", "code": "", "name": "Centrifuga Segunda #1"}, {"id": "CENTRIFUGASEGUNDA2", "code": "", "name": "Centrifuga Segunda #2"}, {"id": "CENTRIFUGASEGUNDA3", "code": "", "name": "Centrifuga Segunda #3"}, {"id": "CENTRIFUGASEGUNDA4", "code": "", "name": "Centrifuga Segunda #4"}, {"id": "CENTRIFUGASEGUNDA5", "code": "", "name": "Centrifuga Segunda #5"}, {"id": "CENTRIFUGASEGUNDA6", "code": "", "name": "Centrifuga Segunda #6"}, {"id": "CENTRIFUGASEGUNDA7", "code": "", "name": "Centrifuga Segunda #7"}]}]}, {"id": "transportadores", "name": "Transportadores", "color": "#b45309", "defaultParams": [{"key": "temperatura_motor", "name": "Temperatura Motor", "unit": "\u00b0C", "type": "num"}, {"key": "amperaje_motor", "name": "Amperaje Motor", "unit": "A", "type": "ac"}, {"key": "estado_de_transmision", "name": "Estado de transmision", "unit": "ESTADO", "type": "ac"}, {"key": "estado_de_aspas", "name": "Estado de aspas", "unit": "ESTADO", "type": "ac"}, {"key": "vibracion_reductor", "name": "Vibracion reductor", "unit": "ESTADO", "type": "ac"}, {"key": "vibracion_motor", "name": "Vibracion motor", "unit": "mm/s", "type": "num"}, {"key": "estado_banda", "name": "Estado banda", "unit": "ESTADO", "type": "ac"}, {"key": "estado_de_cangilones", "name": "Estado de cangilones", "unit": "ESTADO", "type": "ac"}], "sections": [{"id": "s_1", "name": "SINFINES", "equips": [{"id": "SINF\u00cdN1AZUCARDEPRIMERA", "code": "", "name": "Sinf\u00edn 1 azucar de primera"}, {"id": "SINF\u00cdN2AZUCARDEPRIMERA", "code": "", "name": "Sinf\u00edn 2 azucar de primera"}, {"id": "SINF\u00cdN1AZUCARDESEGUNDA", "code": "", "name": "Sinf\u00edn 1 azucar de segunda"}, {"id": "SINF\u00cdN2AZUCARDESEGUNDA", "code": "", "name": "Sinf\u00edn 2 azucar de segunda"}, {"id": "SINF\u00cdN3AZUCARDESEGUNDA", "code": "", "name": "Sinf\u00edn 3 azucar de segunda"}, {"id": "SINF\u00cdNAZUCARDETERCERA", "code": "", "name": "Sinf\u00edn azucar de tercera"}, {"id": "SINF\u00cdNALIMENTADORENFRIADOR", "code": "", "name": "Sinf\u00edn alimentador Enfriador"}]}, {"id": "s_2", "name": "Bandas", "equips": [{"id": "BANDADEAZUCAR1", "code": "", "name": "Banda de azucar 1"}, {"id": "BANDADEAZUCAR2", "code": "", "name": "Banda de azucar 2"}, {"id": "BANDADEAZUCAR3", "code": "", "name": "Banda de azucar 3"}, {"id": "BANDAALIMENTACIONENFRIADOR", "code": "", "name": "Banda alimentacion enfriador"}, {"id": "BANDAJUMBOS", "code": "", "name": "Banda jumbos"}]}, {"id": "s_3", "name": "Elevadores", "equips": [{"id": "ELEVADORAZUCARHUMEDA", "code": "", "name": "Elevador azucar humeda"}, {"id": "ELEVADORAZUCARSECA", "code": "", "name": "Elevador Azucar seca"}]}]}, {"id": "bombas", "name": "Bombas", "color": "#2E75B6", "defaultParams": [{"key": "giro_manual", "name": "Giro Manual", "unit": "Si / No", "type": "ac"}, {"key": "arranque_corto", "name": "Arranque corto", "unit": "Si / No", "type": "ac"}, {"key": "ruidos_anormales", "name": "Ruidos anormales", "unit": "Si / No", "type": "ac"}, {"key": "amperaje", "name": "Amperaje", "unit": "Amp", "type": "num"}], "sections": [{"id": "s_1", "name": "BOMBEO MAGMA B", "equips": [{"id": "BOMBEO1MAGMAB", "code": "", "name": "Bombeo 1 Magma B"}, {"id": "BOMBEO2MAGMAB", "code": "", "name": "Bombeo 2 Magma B"}, {"id": "BOMBEO3MAGMAB", "code": "", "name": "Bombeo 3 Magma B"}, {"id": "BOMBEO4MAGMAB", "code": "", "name": "Bombeo 4 Magma B"}]}, {"id": "s_2", "name": "BOMBEO MAGMA C", "equips": [{"id": "BOMBEO1MAGMAC", "code": "", "name": "Bombeo 1 Magma C"}, {"id": "BOMBEO2MAGMAC", "code": "", "name": "Bombeo 2 Magma C"}]}, {"id": "s_3", "name": "BOMBEO MASA COCIDA", "equips": [{"id": "BOMBEO1MASACOCIDA", "code": "", "name": "Bombeo 1 Masa Cocida"}, {"id": "BOMBEO2MASACOCIDA", "code": "", "name": "Bombeo 2 Masa Cocida"}]}, {"id": "s_4", "name": "BOMBEO SEMILLA", "equips": [{"id": "BOMBEO1SEMILLA", "code": "", "name": "Bombeo 1 Semilla"}, {"id": "BOMBEO2SEMILLA", "code": "", "name": "Bombeo 2 Semilla"}]}, {"id": "s_5", "name": "BOMBEO TORRES DE ENFRIAMIENTO", "equips": [{"id": "BOMBEO1TORREDEENFRIAMIENTO3", "code": "", "name": "Bombeo 1 Torre De Enfriamiento 3"}, {"id": "BOMBEO2TORREDEENFRIAMIENTO3", "code": "", "name": "Bombeo 2 Torre De Enfriamiento 3"}, {"id": "BOMBEO1TORREDEENFRIAMIENTO5", "code": "", "name": "Bombeo 1 Torre De Enfriamiento 5"}, {"id": "BOMBEO2TORREDEENFRIAMIENTO5", "code": "", "name": "Bombeo 2 Torre De Enfriamiento 5"}, {"id": "BOMBEO1TORREDEENFRIAMIENTO7", "code": "", "name": "Bombeo 1 Torre De Enfriamiento 7"}, {"id": "BOMBEO2TORREDEENFRIAMIENTO7", "code": "", "name": "Bombeo 2 Torre De Enfriamiento 7"}]}, {"id": "s_6", "name": "BOMBEO OVC", "equips": [{"id": "BOMBEOAGUAREFRIGERACIONOVC1", "code": "", "name": "Bombeo Agua Refrigeracion Ovc 1"}, {"id": "BOMBEOAGUAREFRIGERACIONOVC2", "code": "", "name": "Bombeo Agua Refrigeracion Ovc 2"}, {"id": "BOMBEOALIMENTADORMASAOVC", "code": "", "name": "Bombeo Alimentador Masa Ovc"}, {"id": "BOMBEODESCARGAMASACOCIDAOVC", "code": "", "name": "Bombeo Descarga Masa Cocida Ovc"}]}, {"id": "s_7", "name": "BOMBEO VAC\u00cdO CONDENSADORES", "equips": [{"id": "BOMBEOVACIOCONDENSADORTACHO1", "code": "", "name": "Bombeo Vacio Condensador Tacho 1"}, {"id": "BOMBEOVACIOCONDENSADORTACHO2", "code": "", "name": "Bombeo Vacio Condensador Tacho 2"}, {"id": "BOMBEOVACIOCONDENSADORTACHO3", "code": "", "name": "Bombeo Vacio Condensador Tacho 3"}, {"id": "BOMBEOVACIOCONDENSADORTACHO4", "code": "", "name": "Bombeo Vacio Condensador Tacho 4"}, {"id": "BOMBEOVACIOCONDENSADORTACHO5", "code": "", "name": "Bombeo Vacio Condensador Tacho 5"}, {"id": "BOMBEOVACIOCONDENSADORTACHO6", "code": "", "name": "Bombeo Vacio Condensador Tacho 6"}, {"id": "BOMBEOVACIOCONDENSADORTACHO7", "code": "", "name": "Bombeo Vacio Condensador Tacho 7"}, {"id": "BOMBEOVACIOCONDENSADORTACHO8", "code": "", "name": "Bombeo Vacio Condensador Tacho 8"}, {"id": "BOMBEOVACIOCONDENSADORTACHOCONTINUO", "code": "", "name": "Bombeo Vacio Condensador Tacho continuo"}]}, {"id": "s_8", "name": "BOMBEO REBALSE Y OTROS", "equips": [{"id": "BOMBEOREBALSECRISTALIZADOR3", "code": "", "name": "Bombeo Rebalse Cristalizador 3"}]}, {"id": "s_9", "name": "DISOLUTOR DE POLVILLO", "equips": [{"id": "BOMBA1DISOLUTORDEPOLVILLO", "code": "", "name": "Bomba 1 disolutor de polvillo"}, {"id": "BOMBA2DISOLUTORDEPOLVILLO", "code": "", "name": "Bomba 2 disolutor de polvillo"}]}, {"id": "s_10", "name": "FUNDICION DE MAGMA", "equips": [{"id": "BOMBA1FUNDICIONDEMAGMABYC", "code": "", "name": "Bomba 1 fundicion de magma B y C"}, {"id": "BOMBA2FUNDICIONDEMAGMABYC", "code": "", "name": "Bomba 2 fundicion de magma B y C"}]}, {"id": "s_11", "name": "LAVADO DE AZUCAR", "equips": [{"id": "BOMBALAVADODEAZUCAR1", "code": "", "name": "Bomba lavado de azucar #1"}, {"id": "BOMBALAVADODEAZUCAR2", "code": "", "name": "Bomba lavado de azucar #2"}]}]}, {"id": "cristalizadores_y_otros", "name": "Cristalizadores y Otros", "color": "#059669", "defaultParams": [{"key": "nivel_de_aceite", "name": "Nivel de aceite", "unit": "Si / no", "type": "ac"}, {"key": "arranque_de_equipo", "name": "Arranque de equipo", "unit": "Si / no", "type": "ac"}, {"key": "amperaje_motor", "name": "Amperaje Motor", "unit": "amp", "type": "num"}, {"key": "vibracion_motor", "name": "Vibracion Motor", "unit": "mm/s", "type": "num"}, {"key": "ruidos", "name": "Ruidos", "unit": "Si / no", "type": "ac"}, {"key": "temperatura_motor", "name": "Temperatura Motor", "unit": "\u00b0C", "type": "num"}, {"key": "vibracion_reductor", "name": "Vibraci\u00f3n Reductor", "unit": "mm/s", "type": "num"}, {"key": "estado_transmision", "name": "Estado Transmisi\u00f3n", "unit": "estado", "type": "ac"}, {"key": "temperatura_salida", "name": "Temperatura Salida", "unit": "Si / no", "type": "ac"}], "sections": [{"id": "s_1", "name": "CRISTALIZADORES", "equips": [{"id": "CRISTALIZADOR1MASACOCIDAC", "code": "", "name": "Cristalizador 1 Masa Cocida C"}, {"id": "CRISTALIZADOR2MASACOCIDAC", "code": "", "name": "Cristalizador 2 Masa Cocida C"}, {"id": "CRISTALIZADOR3MASACOCIDAC", "code": "", "name": "Cristalizador 3 Masa Cocida C"}]}, {"id": "s_2", "name": "GRANEROS", "equips": [{"id": "GRANERO1DETERCERA", "code": "", "name": "Granero 1 de Tercera"}, {"id": "GRANERO2DETERCERA", "code": "", "name": "Granero 2 de Tercera"}, {"id": "GRANERODEPRIMERA", "code": "", "name": "Granero de Primera"}]}, {"id": "s_3", "name": "MEZCLADORES", "equips": [{"id": "MEZCLADOR1MASACOCIDAA", "code": "", "name": "Mezclador 1 Masa Cocida A"}, {"id": "MEZCLADOR2MASACOCIDAA", "code": "", "name": "Mezclador 2 Masa Cocida A"}, {"id": "MEZCLADORMASACOCIDAB", "code": "", "name": "Mezclador Masa Cocida B"}, {"id": "MEZCLADORMASAOVC1", "code": "", "name": "Mezclador Masa OVC1"}]}, {"id": "s_4", "name": "RECIBIDORES", "equips": [{"id": "RECIBIDOR1MASACOCIDAA", "code": "", "name": "Recibidor 1 Masa Cocida A"}, {"id": "RECIBIDOR2MASACOCIDAA", "code": "", "name": "Recibidor 2 Masa Cocida A"}, {"id": "RECIBIDOR1MASACOCIDAB", "code": "", "name": "Recibidor 1 Masa Cocida B"}, {"id": "RECIBIDOR2MASACOCIDAB", "code": "", "name": "Recibidor 2 Masa Cocida B"}]}, {"id": "s_5", "name": "Magmero", "equips": [{"id": "MARGMEROB", "code": "", "name": "Margmero B"}, {"id": "MAGMEROC", "code": "", "name": "Magmero C"}]}, {"id": "s_6", "name": "SECADORES / ENFRIADORES", "equips": [{"id": "SECADOR-ENFRIADOR1", "code": "", "name": "Secador-Enfriador 1"}, {"id": "SECADOR-ENFRIADOR2", "code": "", "name": "Secador-Enfriador 2"}]}, {"id": "s_7", "name": "FUNDICION DE MAGMA", "equips": [{"id": "AGITADORFUNDICI\u00d3NDEMAGMA1", "code": "", "name": "Agitador Fundici\u00f3n de Magma #1"}, {"id": "AGITADORFUNDICI\u00d3NDEMAGMA2", "code": "", "name": "Agitador Fundici\u00f3n de Magma #2"}]}]}]));
+  localStorage.setItem('e_1_CENTRIFUGATERCERA1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "40", "amperaje_motor": "60", "velocidad_lampara": "", "valvula_aliment": "Bueno", "valvula_onoff": "Bueno", "vibracion_motor": "6.92", "vibracion_canasta": "5.92"}));
+  localStorage.setItem('e_1_CENTRIFUGATERCERA2', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "", "amperaje_motor": "", "velocidad_lampara": "", "valvula_aliment": "", "valvula_onoff": "", "vibracion_motor": "", "vibracion_canasta": ""}));
+  localStorage.setItem('e_1_CENTRIFUGATERCERA3', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "40.2", "amperaje_motor": "59", "velocidad_lampara": "", "valvula_aliment": "Bueno", "valvula_onoff": "Bueno", "vibracion_motor": "10.2", "vibracion_canasta": "8.42"}));
+  localStorage.setItem('e_1_CENTRIFUGASEGUNDA1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "43.5", "amperaje_motor": "48", "velocidad_lampara": "", "valvula_aliment": "Bueno", "valvula_onoff": "Bueno", "vibracion_motor": "4.46", "vibracion_canasta": "6.23"}));
+  localStorage.setItem('e_1_CENTRIFUGASEGUNDA2', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "", "amperaje_motor": "", "velocidad_lampara": "", "valvula_aliment": "", "valvula_onoff": "", "vibracion_motor": "", "vibracion_canasta": ""}));
+  localStorage.setItem('e_1_CENTRIFUGASEGUNDA3', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "38.2", "amperaje_motor": "52", "velocidad_lampara": "", "valvula_aliment": "Bueno", "valvula_onoff": "Bueno", "vibracion_motor": "5.92", "vibracion_canasta": "0.8"}));
+  localStorage.setItem('e_1_CENTRIFUGASEGUNDA4', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "44.5", "amperaje_motor": "47", "velocidad_lampara": "", "valvula_aliment": "Bueno", "valvula_onoff": "Bueno", "vibracion_motor": "5.13", "vibracion_canasta": "5.83"}));
+  localStorage.setItem('e_1_CENTRIFUGASEGUNDA5', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "", "amperaje_motor": "", "velocidad_lampara": "", "valvula_aliment": "", "valvula_onoff": "", "vibracion_motor": "", "vibracion_canasta": ""}));
+  localStorage.setItem('e_1_CENTRIFUGASEGUNDA6', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "44.6", "amperaje_motor": "46", "velocidad_lampara": "", "valvula_aliment": "Bueno", "valvula_onoff": "Bueno", "vibracion_motor": "2.18", "vibracion_canasta": "2.16"}));
+  localStorage.setItem('e_1_CENTRIFUGASEGUNDA7', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "48", "amperaje_motor": "54", "velocidad_lampara": "", "valvula_aliment": "valvula en mantto", "valvula_onoff": "Bueno", "vibracion_motor": "17.9", "vibracion_canasta": "8.85"}));
+  localStorage.setItem('e_1_SINFÍN1AZUCARDEPRIMERA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "32.1", "amperaje_motor": "4.3", "estado_de_transmision": "Bueno", "estado_de_aspas": "Bueno", "vibracion_reductor": "1.35", "vibracion_motor": "1.58"}));
+  localStorage.setItem('e_1_SINFÍN2AZUCARDEPRIMERA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "32.6", "amperaje_motor": "13", "estado_de_transmision": "Bueno", "estado_de_aspas": "Bueno", "vibracion_reductor": "5.13", "vibracion_motor": "2.98"}));
+  localStorage.setItem('e_1_SINFÍN1AZUCARDESEGUNDA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "31.8", "amperaje_motor": "6.3", "estado_de_transmision": "revisar", "estado_de_aspas": "Bueno", "vibracion_reductor": "13.6", "vibracion_motor": "31.5"}));
+  localStorage.setItem('e_1_SINFÍN2AZUCARDESEGUNDA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "31", "amperaje_motor": "6", "estado_de_transmision": "Bueno", "estado_de_aspas": "Bueno", "vibracion_reductor": "2.84", "vibracion_motor": "8.21"}));
+  localStorage.setItem('e_1_SINFÍN3AZUCARDESEGUNDA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "33", "amperaje_motor": "7.8", "estado_de_transmision": "Bueno", "estado_de_aspas": "Bueno", "vibracion_reductor": "0.479", "vibracion_motor": "0.865"}));
+  localStorage.setItem('e_1_SINFÍNAZUCARDETERCERA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "", "amperaje_motor": "", "estado_de_transmision": "", "estado_de_aspas": "", "vibracion_reductor": "", "vibracion_motor": ""}));
+  localStorage.setItem('e_1_SINFÍNALIMENTADORENFRIADOR', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "34.3", "amperaje_motor": "19.7", "estado_de_transmision": "", "estado_de_aspas": "Bueno", "vibracion_reductor": "4.86", "vibracion_motor": "5.96"}));
+  localStorage.setItem('e_1_BANDADEAZUCAR1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "39.3", "amperaje_motor": "5.2", "estado_de_transmision": "fajas da\u00f1adas", "estado_banda": "elongada", "vibracion_reductor": "7.15", "vibracion_motor": "3.24"}));
+  localStorage.setItem('e_1_BANDADEAZUCAR2', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "40.3", "amperaje_motor": "3.6", "estado_de_transmision": "Bueno", "estado_banda": "Bueno", "vibracion_reductor": "4.98", "vibracion_motor": "8.23"}));
+  localStorage.setItem('e_1_BANDADEAZUCAR3', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "41.2", "amperaje_motor": "3.3", "estado_de_transmision": "Bueno", "estado_banda": "falta empalme", "vibracion_reductor": "5.51", "vibracion_motor": "5.53"}));
+  localStorage.setItem('e_1_BANDAALIMENTACIONENFRIADOR', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "36.8", "amperaje_motor": "2.7", "estado_de_transmision": "Bueno", "estado_banda": "Bueno", "vibracion_reductor": "2.05", "vibracion_motor": "5.06"}));
+  localStorage.setItem('e_1_BANDAJUMBOS', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "37.5", "amperaje_motor": "5.9", "estado_de_transmision": "revisar", "estado_banda": "revisar", "vibracion_reductor": "6.5", "vibracion_motor": "21.3"}));
+  localStorage.setItem('e_1_ELEVADORAZUCARHUMEDA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "", "amperaje_motor": "", "estado_de_transmision": "", "estado_banda": "", "estado_de_cangilones": "", "vibracion_reductor": "", "vibracion_motor": ""}));
+  localStorage.setItem('e_1_ELEVADORAZUCARSECA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "41.2", "amperaje_motor": "9", "estado_de_transmision": "Bueno", "estado_banda": "Bueno", "estado_de_cangilones": "Bueno", "vibracion_reductor": "4.79", "vibracion_motor": "5.9"}));
+  localStorage.setItem('e_1_BOMBEO1MAGMAB', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEO2MAGMAB', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEO3MAGMAB', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "14"}));
+  localStorage.setItem('e_1_BOMBEO4MAGMAB', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "20"}));
+  localStorage.setItem('e_1_BOMBEO1MAGMAC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "37"}));
+  localStorage.setItem('e_1_BOMBEO2MAGMAC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "15"}));
+  localStorage.setItem('e_1_BOMBEO1MASACOCIDA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "47"}));
+  localStorage.setItem('e_1_BOMBEO2MASACOCIDA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "53"}));
+  localStorage.setItem('e_1_BOMBEO1SEMILLA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "6.4"}));
+  localStorage.setItem('e_1_BOMBEO2SEMILLA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "No", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEO1TORREDEENFRIAMIENTO3', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "11"}));
+  localStorage.setItem('e_1_BOMBEO2TORREDEENFRIAMIENTO3', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "11"}));
+  localStorage.setItem('e_1_BOMBEO1TORREDEENFRIAMIENTO5', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "4.5"}));
+  localStorage.setItem('e_1_BOMBEO2TORREDEENFRIAMIENTO5', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "Si", "amperaje": "4.5"}));
+  localStorage.setItem('e_1_BOMBEO1TORREDEENFRIAMIENTO7', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "9"}));
+  localStorage.setItem('e_1_BOMBEO2TORREDEENFRIAMIENTO7', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "Si", "amperaje": "9"}));
+  localStorage.setItem('e_1_BOMBEOAGUAREFRIGERACIONOVC1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOAGUAREFRIGERACIONOVC2', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOALIMENTADORMASAOVC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEODESCARGAMASACOCIDAOVC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHO1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHO2', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHO3', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHO4', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHO5', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHO6', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHO7', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHO8', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOVACIOCONDENSADORTACHOCONTINUO', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBEOREBALSECRISTALIZADOR3', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "20"}));
+  localStorage.setItem('e_1_BOMBA1DISOLUTORDEPOLVILLO', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "38"}));
+  localStorage.setItem('e_1_BOMBA2DISOLUTORDEPOLVILLO', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "34"}));
+  localStorage.setItem('e_1_BOMBA1FUNDICIONDEMAGMABYC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBA2FUNDICIONDEMAGMABYC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "", "ruidos_anormales": "", "amperaje": ""}));
+  localStorage.setItem('e_1_BOMBALAVADODEAZUCAR1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "17"}));
+  localStorage.setItem('e_1_BOMBALAVADODEAZUCAR2', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "giro_manual": "Si", "arranque_corto": "Si", "ruidos_anormales": "No", "amperaje": "20"}));
+  localStorage.setItem('e_1_CRISTALIZADOR1MASACOCIDAC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "", "arranque_de_equipo": "", "amperaje_motor": "", "vibracion_motor": "", "ruidos": ""}));
+  localStorage.setItem('e_1_CRISTALIZADOR2MASACOCIDAC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "", "arranque_de_equipo": "", "amperaje_motor": "", "vibracion_motor": "", "ruidos": ""}));
+  localStorage.setItem('e_1_CRISTALIZADOR3MASACOCIDAC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "1.7", "vibracion_motor": "", "ruidos": "No"}));
+  localStorage.setItem('e_1_GRANERO1DETERCERA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "", "arranque_de_equipo": "", "amperaje_motor": "", "vibracion_motor": "", "ruidos": ""}));
+  localStorage.setItem('e_1_GRANERO2DETERCERA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "2", "vibracion_motor": "", "ruidos": "No"}));
+  localStorage.setItem('e_1_GRANERODEPRIMERA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "", "vibracion_motor": "", "ruidos": ""}));
+  localStorage.setItem('e_1_MEZCLADOR1MASACOCIDAA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "6", "vibracion_motor": "", "ruidos": "no"}));
+  localStorage.setItem('e_1_MEZCLADOR2MASACOCIDAA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "3", "vibracion_motor": "", "ruidos": "No"}));
+  localStorage.setItem('e_1_MEZCLADORMASACOCIDAB', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "16", "vibracion_motor": "", "ruidos": "No"}));
+  localStorage.setItem('e_1_MEZCLADORMASAOVC1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "22", "vibracion_motor": "", "ruidos": "No"}));
+  localStorage.setItem('e_1_RECIBIDOR1MASACOCIDAA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "si", "arranque_de_equipo": "no", "amperaje_motor": "", "vibracion_motor": "", "ruidos": ""}));
+  localStorage.setItem('e_1_RECIBIDOR2MASACOCIDAA', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "4", "vibracion_motor": "", "ruidos": "Si"}));
+  localStorage.setItem('e_1_RECIBIDOR1MASACOCIDAB', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "2.4", "vibracion_motor": "", "ruidos": "no"}));
+  localStorage.setItem('e_1_RECIBIDOR2MASACOCIDAB', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "1.5", "vibracion_motor": "", "ruidos": "No"}));
+  localStorage.setItem('e_1_MARGMEROB', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "", "arranque_de_equipo": "", "amperaje_motor": "", "vibracion_motor": "", "ruidos": ""}));
+  localStorage.setItem('e_1_MAGMEROC', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "Si", "arranque_de_equipo": "Si", "amperaje_motor": "2.12", "vibracion_motor": "", "ruidos": "No"}));
+  localStorage.setItem('e_1_SECADOR-ENFRIADOR1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "33.5", "amperaje_motor": "", "ruidos": "No", "vibracion_motor": "", "vibracion_reductor": "", "estado_transmision": "Revisar"}));
+  localStorage.setItem('e_1_SECADOR-ENFRIADOR2', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "temperatura_motor": "", "amperaje_motor": "", "temperatura_salida": "", "vibracion_motor": "", "vibracion_reductor": "", "estado_transmision": ""}));
+  localStorage.setItem('e_1_AGITADORFUNDICIÓNDEMAGMA1', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "", "arranque_de_equipo": "", "amperaje_motor": "", "vibracion_motor": "", "ruidos": ""}));
+  localStorage.setItem('e_1_AGITADORFUNDICIÓNDEMAGMA2', JSON.stringify({"savedAt": "2025-01-01T00:00:00.000Z", "tec_mec": "", "responsable": "", "obs": "", "nivel_de_aceite": "", "arranque_de_equipo": "", "amperaje_motor": "", "vibracion_motor": "", "ruidos": ""}));
+  localStorage.setItem('data_v4', '1');
+  nav('home');
+}
+document.addEventListener('DOMContentLoaded', async () => {
+  bootstrapData();
+  await initDrive();
+});
+</script>
+</body>
+</html>
